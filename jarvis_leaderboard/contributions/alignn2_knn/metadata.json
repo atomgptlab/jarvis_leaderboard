@@ -41,6 +41,11 @@
     "AI-SinglePropertyPrediction-bandgap-omdb-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-binding_affinity-pdbbind-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-PBE_gap-halide_peroskites-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-HSE_gap-halide_peroskites-test-mae.csv.zip": ""
+    "AI-SinglePropertyPrediction-HSE_gap-halide_peroskites-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-Ref_ind-halide_peroskites-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-PBE_decomp_energy-halide_peroskites-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-HSE_decomp_energy-halide_peroskites-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-Band_gap_HSE-snumat-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-co2-hmof-test-mae.csv.zip": ""
   }
 }

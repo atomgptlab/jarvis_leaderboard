@@ -35,6 +35,7 @@ bash "$HERE/run_c2db_gap.sh"
 bash "$HERE/run_twod_matpd_bandgap.sh"
 bash "$HERE/run_omdb_bandgap.sh"
 bash "$HERE/run_pdbbind_binding_affinity.sh"
+bash "$HERE/run_hmof_co2.sh"
 # --- Spectra entries ---
 bash "$HERE/run_ir.sh"
 bash "$HERE/run_dielectric.sh"

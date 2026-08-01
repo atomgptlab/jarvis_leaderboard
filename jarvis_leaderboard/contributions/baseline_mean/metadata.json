@@ -47,6 +47,7 @@
     "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-shear_modulus_gv-dft_3d-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-slme-dft_3d-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip": ""
+    "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-co2-hmof-test-mae.csv.zip": ""
   }
 }
