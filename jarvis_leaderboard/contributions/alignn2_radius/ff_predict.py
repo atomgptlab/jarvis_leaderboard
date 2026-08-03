@@ -37,9 +37,15 @@ def main():
     ap.add_argument("--dataset", required=True)
     ap.add_argument("--model_dir", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--src_json", default=None,
+                    help="local json (list of {jid, atoms}) to source structures from "
+                         "when the jarvis dataset name is unavailable")
     a = ap.parse_args()
     md = os.path.expanduser(a.model_dir)
-    d = {e["jid"]: e for e in data(source_of(a.dataset))}
+    if a.src_json:
+        d = {e["jid"]: e for e in json.load(open(os.path.expanduser(a.src_json)))}
+    else:
+        d = {e["jid"]: e for e in data(source_of(a.dataset))}
     calc = AlignnAtomwiseCalculator(path=md, force_mult_natoms=False,
                                     force_multiplier=1, stress_wt=1)
     be = bench(a.dataset, "energy")
@@ -50,7 +56,7 @@ def main():
     eP, fP, sP = {}, {}, {}
     for jid in ids:
         at = Atoms.from_dict(d[jid]["atoms"]).ase_converter(); at.calc = calc
-        eP[jid] = at.get_potential_energy()
+        eP[jid] = at.get_potential_energy() / len(at)   # per-atom (ASE energy is extensive)
         if bf is not None:
             fP[jid] = ";".join(f"{x:.8g}" for x in at.get_forces().flatten())
         if bs is not None:

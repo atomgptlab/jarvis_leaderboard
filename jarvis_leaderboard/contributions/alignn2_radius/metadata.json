@@ -59,6 +59,16 @@
     "AI-SinglePropertyPrediction-bandgap-omdb-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-binding_affinity-pdbbind-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-PBE_gap-halide_peroskites-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-HSE_gap-halide_peroskites-test-mae.csv.zip": ""
+    "AI-SinglePropertyPrediction-HSE_gap-halide_peroskites-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-a-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-b-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-c-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-vol-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-kv-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-c11-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-c44-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-form_en-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-surf_en-dft_3d_chipsff-test-mae.csv.zip": "",
+    "AI-SinglePropertyPrediction-vac_en-dft_3d_chipsff-test-mae.csv.zip": ""
   }
 }
