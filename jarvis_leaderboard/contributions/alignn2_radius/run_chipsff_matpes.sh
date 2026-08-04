@@ -23,3 +23,7 @@ set -e
 HERE="$(cd "$(dirname "$0")" && pwd)"
 PY=/home/kamalch/miniforge3/envs/blackwell312/bin/python
 "$PY" "$HERE/chipsff_leaderboard_matpes.py"
+# surf_en (full 85/85): re-run surfaces per-material with the benchmark's own miller
+# indices (parse Surface-<jid>_miller_h_k_l from dft_3d_chipsff_surf_en), properties
+# [relax_structure, calculate_ev_curve, analyze_surfaces] (ev_curve supplies the bulk
+# reference energy, else surf_en is silently skipped). Extract all_surfaces[].surf_en.
