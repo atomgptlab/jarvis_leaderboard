@@ -1,29 +1,26 @@
 #!/bin/bash
-# Reproduce the CHIPS_FF leaderboard entries for the ALIGNN 2.0 default force field
-# (matpes_smooth: 2/2/128, smooth cutoff, nbr52, MATPES-PBE ep100, radius graph).
-#
-# Pipeline:
-# 1) Run the chipsff suite (relax, ev_curve, formation, elastic, surfaces, defects)
-#    on the 104 canonical CHIPS_FF jids with the matpes_smooth model. On a SLURM
-#    cluster: submit_chipsff_model.sh matpes_ep100 <model_dir>  (one job/jid,
-#    calculator_type=alignn_ff, calculator_settings.alignn_ff.path=<model_dir>).
-# 2) Extract per-material predictions from each <jid>_job_info.json into
-#    chipsff_pred_matpes.json (a,b,c,vol,kv,c11,c44, equilibrium_energy, elements,
-#    surfaces, vacancies).
-# 3) Build self-consistent elemental chemical potentials with the SAME model
-#    (single-point energy/atom of each element's reference structure) ->
-#    matpes_smooth_unary.json.  IMPORTANT: the formation energy must use the model's
-#    OWN elemental references; the shipped chipsff chempots are on a different scale
-#    and inflate form_en by ~2.4 eV/atom (2.45 -> 0.081 once fixed).
-# 4) Write the 10 leaderboard CSVs + register in metadata.json.
-# NOTE: a/b/c/vol require a PRIMITIVE-cell run (use_conventional_cell=false) to match
-#       the benchmark; intensive props (kv/c11/c44/form_en/surf_en/vac_en) use the
-#       conventional run. Two prediction files are staged accordingly.
+# Reproduce the CHIPS_FF (dft_3d_chipsff) leaderboard entries for the ALIGNN 2.0
+# default force field (matpes_smooth: 2/2/128 smooth-cutoff nbr52, MATPES-PBE ep100).
+# Full pipeline (scripts all in this directory):
 set -e
 HERE="$(cd "$(dirname "$0")" && pwd)"
-PY=/home/kamalch/miniforge3/envs/blackwell312/bin/python
-"$PY" "$HERE/chipsff_leaderboard_matpes.py"
-# surf_en (full 85/85): re-run surfaces per-material with the benchmark's own miller
-# indices (parse Surface-<jid>_miller_h_k_l from dft_3d_chipsff_surf_en), properties
-# [relax_structure, calculate_ev_curve, analyze_surfaces] (ev_curve supplies the bulk
-# reference energy, else surf_en is silently skipped). Extract all_surfaces[].surf_en.
+PY=/home/kamalch/miniforge3/envs/chipsff/bin/python      # env with chipsff + alignn.ff
+PYLB=/home/kamalch/miniforge3/envs/blackwell312/bin/python
+
+# 1) Run the chipsff suite on the 104 canonical CHIPS_FF jids with matpes_smooth.
+#    Cluster (SLURM): submit_chipsff_model.sh matpes_ep100 <model_dir>  (one job/jid;
+#    relax, ev_curve, formation, elastic, surfaces, defects; use_conventional_cell=true).
+# 2) a/b/c/vol need PRIMITIVE cells -> rerun relax+ev_curve with use_conventional_cell=false.
+# 3) surf_en needs the benchmark's per-material miller indices AND ev_curve (bulk ref):
+#    chipsff_surf_runner.py runs relax+ev_curve+analyze_surfaces per material with the
+#    millers parsed from dft_3d_chipsff_surf_en; chipsff_extract_surf.py collects them.
+# 4) Extract predictions from the job_info.json files:
+#    $PYLB chipsff_extract_pred.py <runs/matpes_ep100> chipsff_pred_matpes.json full
+#    $PYLB chipsff_extract_pred.py <matpes_prim>       chipsff_pred_matpes_prim.json geom
+# 5) Self-consistent elemental chemical potentials (single-point/atom of each element's
+#    reference structure with the SAME model) -- REQUIRED so formation energy is on the
+#    model's own scale (shipped chipsff chempots are a different-model scale: form_en
+#    2.44 -> 0.081 eV/atom once fixed):
+#    $PY build_matpes_unary.py   # -> matpes_smooth_unary.json
+# 6) Write the leaderboard CSVs + register metadata:
+"$PYLB" "$HERE/chipsff_leaderboard_matpes.py"
