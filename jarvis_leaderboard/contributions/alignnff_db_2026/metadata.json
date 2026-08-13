@@ -1,0 +1,18 @@
+{
+    "model_name": "ALIGNN-FF-DB (cgcnn 4/4/256)",
+    "project_url": "https://github.com/atomgptlab/alignn",
+    "date_submitted": "07-24-2026",
+    "author_email": "drkamal@jhu.edu",
+    "database_version": "alignn_ff_db-2024",
+    "team_name": "AtomGPTLab",
+    "time_taken_seconds": {
+        "AI-MLFF-energy-alignn_ff_db-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,torch,alignn",
+    "hardware_used": "NVIDIA GB10 / RTX 6000 Ada",
+    "git_url": [
+        "https://github.com/atomgptlab/alignn"
+    ]
+}

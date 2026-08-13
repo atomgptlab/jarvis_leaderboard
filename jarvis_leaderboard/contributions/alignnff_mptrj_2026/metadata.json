@@ -1,0 +1,19 @@
+{
+    "model_name": "ALIGNN-FF MPtrj (Frontier, cgcnn 4/4/256)",
+    "project_url": "https://github.com/atomgptlab/alignn",
+    "date_submitted": "07-25-2026",
+    "author_email": "drkamal@jhu.edu",
+    "database_version": "MPtrj",
+    "team_name": "AtomGPTLab",
+    "time_taken_seconds": {
+        "AI-MLFF-energy-mptrj-test-mae.csv.zip": "",
+        "AI-MLFF-forces-mptrj-test-multimae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,torch,alignn",
+    "hardware_used": "OLCF Frontier MI250X",
+    "git_url": [
+        "https://github.com/atomgptlab/alignn"
+    ]
+}

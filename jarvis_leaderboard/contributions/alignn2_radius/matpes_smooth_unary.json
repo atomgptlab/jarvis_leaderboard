@@ -1,0 +1,170 @@
+{
+  "Ag": {
+    "jid": "JVASP-14606",
+    "energy": -2.696948
+  },
+  "Al": {
+    "jid": "JVASP-816",
+    "energy": -3.724953
+  },
+  "As": {
+    "jid": "JVASP-14603",
+    "energy": -4.618638
+  },
+  "Au": {
+    "jid": "JVASP-825",
+    "energy": -3.213613
+  },
+  "B": {
+    "jid": "JVASP-828",
+    "energy": -6.597998
+  },
+  "Ba": {
+    "jid": "JVASP-14604",
+    "energy": -3.272241
+  },
+  "Bi": {
+    "jid": "JVASP-837",
+    "energy": -3.862441
+  },
+  "Br": {
+    "jid": "JVASP-840",
+    "energy": -1.543669
+  },
+  "C": {
+    "jid": "JVASP-25407",
+    "energy": -9.231123
+  },
+  "Cd": {
+    "jid": "JVASP-14832",
+    "energy": -0.720987
+  },
+  "Cl": {
+    "jid": "JVASP-25104",
+    "energy": -1.779706
+  },
+  "Cr": {
+    "jid": "JVASP-861",
+    "energy": -9.532532
+  },
+  "Cu": {
+    "jid": "JVASP-867",
+    "energy": -3.742843
+  },
+  "Fe": {
+    "jid": "JVASP-25142",
+    "energy": -7.962862
+  },
+  "Ga": {
+    "jid": "JVASP-14622",
+    "energy": -2.87033
+  },
+  "Ge": {
+    "jid": "JVASP-890",
+    "energy": -4.466323
+  },
+  "Hf": {
+    "jid": "JVASP-802",
+    "energy": -9.820853
+  },
+  "Hg": {
+    "jid": "JVASP-25273",
+    "energy": -0.132764
+  },
+  "I": {
+    "jid": "JVASP-895",
+    "energy": -1.460467
+  },
+  "In": {
+    "jid": "JVASP-898",
+    "energy": -2.533864
+  },
+  "Li": {
+    "jid": "JVASP-25117",
+    "energy": -1.904547
+  },
+  "Mo": {
+    "jid": "JVASP-21195",
+    "energy": -10.911789
+  },
+  "N": {
+    "jid": "JVASP-25250",
+    "energy": -8.289656
+  },
+  "Nb": {
+    "jid": "JVASP-934",
+    "energy": -10.088514
+  },
+  "Ni": {
+    "jid": "JVASP-943",
+    "energy": -5.495438
+  },
+  "O": {
+    "jid": "JVASP-949",
+    "energy": -4.872657
+  },
+  "P": {
+    "jid": "JVASP-25144",
+    "energy": -5.211064
+  },
+  "Pb": {
+    "jid": "JVASP-961",
+    "energy": -3.487199
+  },
+  "Pd": {
+    "jid": "JVASP-963",
+    "energy": -5.231387
+  },
+  "Pt": {
+    "jid": "JVASP-972",
+    "energy": -6.112021
+  },
+  "S": {
+    "jid": "JVASP-95268",
+    "energy": -3.903071
+  },
+  "Sb": {
+    "jid": "JVASP-993",
+    "energy": -4.060925
+  },
+  "Se": {
+    "jid": "JVASP-7804",
+    "energy": -3.286772
+  },
+  "Si": {
+    "jid": "JVASP-1002",
+    "energy": -5.403529
+  },
+  "Sn": {
+    "jid": "JVASP-14601",
+    "energy": -3.766283
+  },
+  "Te": {
+    "jid": "JVASP-25210",
+    "energy": -3.024039
+  },
+  "Ti": {
+    "jid": "JVASP-1029",
+    "energy": -7.751873
+  },
+  "Tl": {
+    "jid": "JVASP-25337",
+    "energy": -2.248363
+  },
+  "U": {
+    "jid": "JVASP-14725",
+    "energy": -11.147255
+  },
+  "W": {
+    "jid": "JVASP-79561",
+    "energy": -12.935625
+  },
+  "Zn": {
+    "jid": "JVASP-1056",
+    "energy": -1.054626
+  },
+  "Zr": {
+    "jid": "JVASP-14612",
+    "energy": -8.480942
+  }
+}

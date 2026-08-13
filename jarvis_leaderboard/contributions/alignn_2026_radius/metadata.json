@@ -1,0 +1,22 @@
+{
+    "model_name": "ALIGNN-2026-PureTorch",
+    "project_url": "https://github.com/atomgptlab/alignn",
+    "date_submitted": "07-07-2026",
+    "author_email": "drkamal@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPTLab",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip": 21813,
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip": 21539,
+        "AI-SinglePropertyPrediction-gappbe-megnet-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-e_form-megnet-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "NVIDIA RTX 6000 Ada Generation GPU",
+    "notes": "Pure-PyTorch ALIGNN (alignn_atomwise_pure model with pure_torch neighbor strategy; no DGL/torch_geometric). Graph-level property prediction, 4 ALIGNN + 4 GCN layers, hidden=512, cutoff=5.0 Angstrom, max_neighbors=12, three_body_cutoff=3.5 (force-field-compatible radius graph), atom_features=cgcnn, 300 epochs, AdamW + OneCycle, L1 loss. Same unified graph is used for property prediction and interatomic force fields.",
+    "git_url": [
+        "https://github.com/atomgptlab/alignn"
+    ]
+}
