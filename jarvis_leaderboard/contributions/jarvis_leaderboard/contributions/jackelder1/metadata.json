@@ -1,0 +1,16 @@
+{
+    "model_name": "cfid_chem_rf",
+    "project_url": "https://github.com/jackelder1/jarvis_leaderboard",
+    "date_submitted": "04-09-2026",
+    "author_email": "jelder9.edu",
+    "database_version": "12-12-2022",
+    "team_name": "JHU",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools, scikit-learn, numpy",
+    "hardware_used": "Colab",
+    "git_url": []
+}
