@@ -1,0 +1,21 @@
+{
+  "model_name": "Element-Fraction GradientBoostingRegressor",
+  "team_name": "Peter Muskett",
+  "email": "pmusket2@jh.eu",
+  "project_url": "https://github.com/usnistgov/jarvis_leaderboard",
+  "description": "Gradient Boosting Regressor trained on 103-dimensional element-fraction descriptors (atomic fraction of each element up to Z=103). Features computed via jarvis-tools Composition.atomic_fraction_array. Trained on 500 samples from the JARVIS-DFT cfid_3d dataset with default sklearn hyperparameters.",
+  "software": "scikit-learn, jarvis-tools",
+  "language": "Python",
+  "compute": "CPU",
+  "train_time_seconds": "< 60",
+  "n_train_samples": 500,
+  "n_test_samples": 500,
+  "feature_type": "element_fractions",
+  "feature_dimensions": 103,
+  "model_hyperparameters": {
+    "n_estimators": 100,
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "loss": "squared_error"
+  }
+}
