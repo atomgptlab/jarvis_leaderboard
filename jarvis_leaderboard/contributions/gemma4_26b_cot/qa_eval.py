@@ -22,6 +22,9 @@ print(f"{WHICH}: total {len(data)} todo {len(todo)}", flush=True)
 
 
 COT = os.environ.get("COT", "0") == "1"
+# A reasoning model spends its budget before it writes an answer, so the cap
+# has to be generous or the reply is truncated mid-thought and scores wrong.
+MAX_TOKENS = int(os.environ.get("MAX_TOKENS", "4096"))
 
 
 def build(item):
@@ -34,7 +37,7 @@ def build(item):
             lines += [f"{L}. {c}" for L, c in zip(LETTERS, item["choices"])]
             lines += ["", "Think it through, then end your reply with the "
                       "final choice on its own line as: ANSWER: <letter>"]
-            return "\n".join(lines), 4096
+            return "\n".join(lines), MAX_TOKENS
         lines = ["Answer this multiple choice question.",
                  "Reply with only the letter of the correct answer.", "",
                  item["question"]]
@@ -42,7 +45,7 @@ def build(item):
         lines.append("Answer:")
         return "\n".join(lines), 12
     return (item["question"] + "\n\nThink it through, then end your reply with "
-            "the final integer answer on its own line as: ANSWER: <integer>"), 4096
+            "the final integer answer on its own line as: ANSWER: <integer>"), MAX_TOKENS
 
 
 def parse(text, mc):
