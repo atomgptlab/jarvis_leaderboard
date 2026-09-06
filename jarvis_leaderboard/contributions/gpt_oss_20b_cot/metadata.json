@@ -6,7 +6,9 @@
     "database_version": "12-12-2022",
     "team_name": "AtomGPT",
     "time_taken_seconds": {
-        "AI-TextClass-test_quiz-mmlu-test-acc.csv.zip": "1120"
+        "AI-TextClass-test_quiz-mmlu-test-acc.csv.zip": "1120",
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "1660",
+        "AI-TextClass-test_quiz-aime_2024-test-acc.csv.zip": "300"
     },
     "language": "python",
     "os": "linux",

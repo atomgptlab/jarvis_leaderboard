@@ -57,12 +57,13 @@ def parse(text, mc):
             return m.group(1).upper()
         m = re.search(r"\b([ABCD])\b", text.strip().upper())
         return m.group(1) if m else "X"
+    # -1 marks "no answer" for integer benchmarks: it can never be correct,
+    # and it keeps the CSV column numeric. A string marker would turn the
+    # column into text and silently mismatch every integer key.
     m = re.search(r"ANSWER:\s*(-?\d+)", text, re.I)
     if not m:
         nums = re.findall(r"-?\d+", text)
-        if not nums:
-            return "X"
-        return str(int(nums[-1]))
+        return str(int(nums[-1])) if nums else "-1"
     return str(int(m.group(1)))
 
 

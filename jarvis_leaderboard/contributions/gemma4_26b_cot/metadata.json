@@ -7,7 +7,8 @@
     "team_name": "AtomGPT",
     "time_taken_seconds": {
         "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "471",
-        "AI-TextClass-test_quiz-aime_2024-test-acc.csv.zip": "38"
+        "AI-TextClass-test_quiz-aime_2024-test-acc.csv.zip": "38",
+        "AI-TextClass-test_quiz-mmlu-test-acc.csv.zip": "3980"
     },
     "language": "python",
     "os": "linux",
