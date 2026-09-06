@@ -1,0 +1,18 @@
+{
+    "model_name": "GPT-OSS-20B (CoT)",
+    "project_url": "https://atomgpt.org",
+    "date_submitted": "09-06-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-mmlu-test-acc.csv.zip": "1120"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "httpx,datasets",
+    "hardware_used": "inference served by atomgpt.org",
+    "git_url": [
+        "https://github.com/atomgptlab/atomsh"
+    ]
+}
