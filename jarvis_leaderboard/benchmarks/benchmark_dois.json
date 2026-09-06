@@ -110,7 +110,14 @@
             ],
             "mlearn_Si_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
-            ]
+            ],
+            "chgmag_magmom.json.zip": [],
+            "matpes_forces.json.zip": [],
+            "matpes_stresses.json.zip": [],
+            "chgmag_charge.json.zip": [],
+            "mptrj_forces.json.zip": [],
+            "matpes_energy.json.zip": [],
+            "mptrj_energy.json.zip": []
         },
         "SinglePropertyClass": {
             "dft_3d_magmom_oszicar.json.zip": [
@@ -152,7 +159,6 @@
                 "https://doi.org/10.48550/arXiv.2305.11842"
             ],
             "dft_3d_Tc_supercon.json.zip": [
-                "https://www.nature.com/articles/s41524-022-00933-1",
                 "https://www.nature.com/articles/s41524-022-00933-1"
             ],
             "dft_3d_bulk_modulus_kv.json.zip": [
@@ -243,9 +249,6 @@
                 "https://iopscience.iop.org/article/10.1088/2752-5724/ad4a94",
                 "https://www.nature.com/articles/s41524-020-00440-1",
                 "https://doi.org/10.48550/arXiv.2305.11842"
-            ],
-            "dft_3d_Tc_supercon.json.zip": [
-                "https://www.nature.com/articles/s41524-022-00933-1"
             ],
             "dft_3d_Tc_supercon_hydride_plus_bulk.json.zip": [
                 "https://iopscience.iop.org/article/10.1088/2752-5724/ad4a94",
@@ -466,12 +469,21 @@
             ],
             "vacancydb_oxides_train_test_ef.json.zip": [
                 "https://doi.org/10.48550/arXiv.2205.08366"
-            ]
+            ],
+            "twod_matpd_bandgap.json.zip": [],
+            "omdb_bandgap.json.zip": [],
+            "hmof_co2.json.zip": [],
+            "pdbbind_binding_affinity.json.zip": [],
+            "polymer_genome_gga_gap.json.zip": [],
+            "c2db_gap.json.zip": [],
+            "oqmd_ltc.json.zip": []
         },
         "Spectra": {
             "edos_pdos_ph_dos.json.zip": [
                 "https://doi.org/10.1103/PhysRevMaterials.7.023803"
-            ]
+            ],
+            "irdb_ir.json.zip": [],
+            "mbjdiel_dielectric.json.zip": []
         },
         "TextClass": {
             "arXiv_categories.json.zip": [
@@ -482,6 +494,12 @@
             ],
             "pubchem_categories.json.zip": [
                 "https://doi.org/10.1093/nar/gkaa971"
+            ],
+            "gpqa_diamond_test_quiz.json.zip": [
+                "https://doi.org/10.48550/arXiv.2311.12022"
+            ],
+            "aime_2024_test_quiz.json.zip": [
+                "https://huggingface.co/datasets/HuggingFaceH4/aime_2024"
             ]
         },
         "TextGen": {
@@ -547,6 +565,11 @@
         "TokenClass": {
             "mat_scholar_ner_labels.json.zip": [
                 "https://doi.org/10.1021/acs.jcim.9b00470"
+            ]
+        },
+        "AgentTask": {
+            "terminal_bench_core_0_1_1_task_resolved.json.zip": [
+                "https://www.tbench.ai"
             ]
         }
     },
@@ -1217,17 +1240,23 @@
                 "https://doi.org/10.48550/arXiv.2305.11842"
             ],
             "dft_3d_Tc_supercon_JVASP_19679_ZrN.json.zip": [
-                "https://doi.org/10.1002%2Fsia.740150606"],
+                "https://doi.org/10.1002%2Fsia.740150606"
+            ],
             "dft_3d_Tc_supercon_JVASP_31795_NbSe2.json.zip": [
-                "https://doi.org/10.1016/0031-9163(66)90902-4"],
+                "https://doi.org/10.1016/0031-9163(66)90902-4"
+            ],
             "dft_3d_Tc_supercon_JVASP_30369_NbS2.json.zip": [
-                "https://doi.org/10.1143/JPSJ.45.50"],
+                "https://doi.org/10.1143/JPSJ.45.50"
+            ],
             "dft_3d_Tc_supercon_JVASP_36335_NbN.json.zip": [
-                "https://doi.org/10.1103%2FRevModPhys.35.1"],
+                "https://doi.org/10.1103%2FRevModPhys.35.1"
+            ],
             "dft_3d_Tc_supercon_JVASP_20166_Mo2C.json.zip": [
-                "https://doi.org/10.1038/nmat4374"],
+                "https://doi.org/10.1038/nmat4374"
+            ],
             "dft_3d_Tc_supercon_JVASP_45_FeSe.json.zip": [
-                "http://dx.doi.org/10.1103/PhysRevB.94.035108"]
+                "http://dx.doi.org/10.1103/PhysRevB.94.035108"
+            ]
         },
         "Spectra": {
             "dft_3d_XRD_JVASP_19821_MgB2.json.zip": [

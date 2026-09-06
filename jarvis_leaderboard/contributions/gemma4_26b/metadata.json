@@ -1,0 +1,18 @@
+{
+    "model_name": "gemma-4-26b (0-shot)",
+    "project_url": "https://atomgpt.org",
+    "date_submitted": "09-05-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-mmlu-test-acc.csv.zip": "548"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "httpx,datasets",
+    "hardware_used": "inference served by atomgpt.org",
+    "git_url": [
+        "https://github.com/atomgptlab/atomsh"
+    ]
+}

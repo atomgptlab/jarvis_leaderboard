@@ -1,0 +1,44 @@
+#!/bin/bash
+# Install atomsh into the task container.
+set -uo pipefail
+
+# --ignore-installed: some task images carry distro-managed copies of atomsh's
+# dependencies (typing_extensions, say) with no RECORD file, and pip aborts the
+# whole install rather than replace one. Installing alongside is fine here; the
+# container is discarded after the task.
+pip_install() {
+  python3 -m pip install --quiet --disable-pip-version-check \
+      --ignore-installed "$@" 2>/dev/null \
+    || python3 -m pip install --quiet --disable-pip-version-check \
+         --ignore-installed --break-system-packages "$@"
+}
+
+if ! command -v python3 >/dev/null 2>&1; then
+  (apt-get update -qq && apt-get install -y -qq python3) >/dev/null 2>&1 \
+    || (apk add --no-cache python3) >/dev/null 2>&1
+fi
+
+if ! python3 -m pip --version >/dev/null 2>&1; then
+  (apt-get update -qq && apt-get install -y -qq python3-pip) >/dev/null 2>&1 \
+    || (apk add --no-cache py3-pip) >/dev/null 2>&1 \
+    || (curl -fsSL https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py \
+        && python3 /tmp/get-pip.py -q) >/dev/null 2>&1
+fi
+
+{% if wheel_b64 %}
+# Locally built wheel, embedded so the container needs nothing from PyPI but
+# the dependencies.
+# The filename must stay PEP 427 compliant or pip refuses the wheel.
+base64 -d > '/tmp/{{ wheel_name }}' <<'ATOMSH_WHEEL_B64'
+{{ wheel_b64 }}
+ATOMSH_WHEEL_B64
+pip_install '/tmp/{{ wheel_name }}'
+{% else %}
+pip_install 'atomsh=={{ version }}'
+{% endif %}
+
+if ! command -v atomsh >/dev/null 2>&1; then
+  export PATH="$PATH:/usr/local/bin:$HOME/.local/bin"
+fi
+command -v atomsh >/dev/null 2>&1 || { echo "atomsh not on PATH"; exit 1; }
+atomsh --version

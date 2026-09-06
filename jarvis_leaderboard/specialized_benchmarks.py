@@ -263,6 +263,22 @@ if __name__ == "__main__":
         "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip",
     ]
 
+    agent_benchmarks = [
+        "AI-AgentTask-task_resolved-terminal_bench_core_0_1_1-test-acc.csv.zip",
+    ]
+
+    process_benchmarks(
+        benchmarks=agent_benchmarks,
+        metric="acc",
+        replacements=[
+            "AI-AgentTask-",
+            "-test-acc.csv.zip",
+        ],
+        md_path="AgentBench.md",
+        width=900,
+        height=700,
+    )
+
     process_benchmarks(
         benchmarks=catalysis_benchmarks,
         metric="pearsonr",

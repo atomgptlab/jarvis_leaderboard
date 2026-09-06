@@ -1,0 +1,18 @@
+{
+    "model_name": "Atomsh-gemma-4-26b",
+    "project_url": "https://github.com/atomgptlab/atomsh",
+    "date_submitted": "09-05-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "terminal-bench-core==0.1.1",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-AgentTask-task_resolved-terminal_bench_core_0_1_1-test-acc.csv.zip": "10930"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "atomsh,terminal-bench==0.2.18,docker",
+    "hardware_used": "local workstation, agent inference served by atomgpt.org (gemma-4-26b)",
+    "git_url": [
+        "https://github.com/atomgptlab/atomsh"
+    ]
+}
