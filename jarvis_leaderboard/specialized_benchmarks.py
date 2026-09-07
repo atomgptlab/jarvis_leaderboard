@@ -127,8 +127,10 @@ def process_benchmarks(
     # print('df_reordered',df_reordered)
     # Plot and save
     fig = px.imshow(df_reordered, text_auto=True)
-    fig.update_layout(width=width, height=height,coloraxis_showscale=showscale)
-    #fig.update_traces(showscale=False)
+    fig.update_layout(
+        width=width, height=height, coloraxis_showscale=showscale
+    )
+    # fig.update_traces(showscale=False)
     save_md(fig=fig, md_path=md_path, detailed_links=detailed_links)
 
 
