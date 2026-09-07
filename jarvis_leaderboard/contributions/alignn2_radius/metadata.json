@@ -70,5 +70,10 @@
     "AI-SinglePropertyPrediction-form_en-dft_3d_chipsff-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-surf_en-dft_3d_chipsff-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-vac_en-dft_3d_chipsff-test-mae.csv.zip": ""
-  }
+  },
+  "git_url": [
+    "https://github.com/atomgptlab/alignn"
+  ],
+  "software_used": "python, alignn, jarvis-tools, torch",
+  "hardware_used": "NVIDIA GPU workstation"
 }

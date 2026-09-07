@@ -47,5 +47,10 @@
     "AI-SinglePropertyPrediction-HSE_decomp_energy-halide_peroskites-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-Band_gap_HSE-snumat-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-co2-hmof-test-mae.csv.zip": ""
-  }
+  },
+  "git_url": [
+    "https://github.com/atomgptlab/alignn"
+  ],
+  "software_used": "python, alignn, jarvis-tools, torch",
+  "hardware_used": "NVIDIA GPU workstation"
 }
