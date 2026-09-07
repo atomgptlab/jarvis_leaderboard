@@ -1,0 +1,31 @@
+{
+    "model_name": "g2p_gbm",
+    "project_url": "https://github.com/JKoblitz/bacdive-AI;https://doi.org/10.5281/zenodo.13757323",
+    "date_submitted": "09-07-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "team_name": "JHU",
+    "language": "python",
+    "os": "linux",
+    "description": "HistGradientBoostingClassifier on Pfam counts, per trait. Substituted for GradientBoostingClassifier, which is impractically slow at 2,047 features.",
+    "time_taken_seconds": {
+        "AI-SinglePropertyClass-acidophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-gram_positive-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-spore_forming-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-aerobic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-anaerobic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-thermophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-psychrophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-motility-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-acidophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-gram_positive-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-spore_forming-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-aerobic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-anaerobic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-thermophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-psychrophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-motility-bacdive_clade-test-acc.csv.zip": ""
+    },
+    "git_url": "https://github.com/atomgptlab/jarvis_leaderboard",
+    "software_used": "python 3.12, scikit-learn 1.6, pytorch 2.8, pandas, numpy",
+    "hardware_used": "CPU only (Intel/AMD x86-64); no GPU required"
+}

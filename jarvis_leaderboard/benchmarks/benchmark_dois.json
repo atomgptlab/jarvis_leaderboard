@@ -6,6 +6,12 @@
             ]
         },
         "MLFF": {
+            "chgmag_charge.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1"
+            ],
+            "chgmag_magmom.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1"
+            ],
             "alignn_ff_db_energy.json.zip": [
                 "https://doi.org/10.1039/D2DD00096B"
             ],
@@ -155,6 +161,70 @@
             "dft_3d_spillage.json.zip": [
                 "https://www.nature.com/articles/s41524-020-00440-1",
                 "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "bacdive_acidophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_aerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_anaerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_acidophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_aerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_anaerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_gram_positive.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_motility.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_psychrophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_spore_forming.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_thermophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_gram_positive.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_motility.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_psychrophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_spore_forming.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_thermophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
             ]
         },
         "SinglePropertyPrediction": {

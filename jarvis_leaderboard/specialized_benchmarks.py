@@ -127,8 +127,10 @@ def process_benchmarks(
     # print('df_reordered',df_reordered)
     # Plot and save
     fig = px.imshow(df_reordered, text_auto=True)
-    fig.update_layout(width=width, height=height,coloraxis_showscale=showscale)
-    #fig.update_traces(showscale=False)
+    fig.update_layout(
+        width=width, height=height, coloraxis_showscale=showscale
+    )
+    # fig.update_traces(showscale=False)
     save_md(fig=fig, md_path=md_path, detailed_links=detailed_links)
 
 
@@ -178,6 +180,24 @@ def save_md(fig=None, md_path=None, detailed_links=None):
 
 
 if __name__ == "__main__":
+    g2p_benchmarks = [
+        "AI-SinglePropertyClass-acidophilic-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-gram_positive-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-spore_forming-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-aerobic-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-anaerobic-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-thermophilic-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-psychrophilic-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-motility-bacdive-test-acc.csv.zip",
+        "AI-SinglePropertyClass-acidophilic-bacdive_clade-test-acc.csv.zip",
+        "AI-SinglePropertyClass-gram_positive-bacdive_clade-test-acc.csv.zip",
+        "AI-SinglePropertyClass-spore_forming-bacdive_clade-test-acc.csv.zip",
+        "AI-SinglePropertyClass-aerobic-bacdive_clade-test-acc.csv.zip",
+        "AI-SinglePropertyClass-anaerobic-bacdive_clade-test-acc.csv.zip",
+        "AI-SinglePropertyClass-thermophilic-bacdive_clade-test-acc.csv.zip",
+        "AI-SinglePropertyClass-psychrophilic-bacdive_clade-test-acc.csv.zip",
+        "AI-SinglePropertyClass-motility-bacdive_clade-test-acc.csv.zip",
+    ]
     catalysis_benchmarks = [
         "AI-SinglePropertyPrediction-ead-tinnet_N-test-mae.csv.zip",
         "AI-SinglePropertyPrediction-ead-tinnet_O-test-mae.csv.zip",
@@ -267,6 +287,14 @@ if __name__ == "__main__":
         "AI-AgentTask-task_resolved-terminal_bench_core_0_1_1-test-acc.csv.zip",
     ]
 
+    process_benchmarks(
+        benchmarks=g2p_benchmarks,
+        metric="acc",
+        replacements=["g2p_"],
+        md_path="G2P.md",
+        width=1000,
+        height=500,
+    )
     process_benchmarks(
         benchmarks=agent_benchmarks,
         metric="acc",

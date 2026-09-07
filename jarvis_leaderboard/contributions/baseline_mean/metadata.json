@@ -49,5 +49,10 @@
     "AI-SinglePropertyPrediction-slme-dft_3d-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip": "",
     "AI-SinglePropertyPrediction-co2-hmof-test-mae.csv.zip": ""
-  }
+  },
+  "git_url": [
+    "https://github.com/atomgptlab/jarvis_leaderboard"
+  ],
+  "software_used": "python, numpy",
+  "hardware_used": "CPU only; no GPU required"
 }
