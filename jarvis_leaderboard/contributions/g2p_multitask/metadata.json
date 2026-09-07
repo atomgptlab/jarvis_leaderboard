@@ -1,0 +1,28 @@
+{
+    "model_name": "g2p_multitask",
+    "project_url": "https://github.com/JKoblitz/bacdive-AI;https://doi.org/10.5281/zenodo.13757323",
+    "date_submitted": "09-07-2026",
+    "author_email": "kamal.choudhary@jhu.edu",
+    "team_name": "JHU",
+    "language": "python",
+    "os": "linux",
+    "description": "Multi-task neural network (2047 Pfam features -> shared 512/256 trunk -> 8 binary heads) with a masked loss, so each strain contributes only to the traits it was actually phenotyped for. Trained on the BacDive-AI release. Rare traits are recovered only by this cross-trait sharing.",
+    "time_taken_seconds": {
+        "AI-SinglePropertyClass-acidophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-gram_positive-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-spore_forming-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-aerobic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-anaerobic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-thermophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-psychrophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-motility-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-acidophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-gram_positive-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-spore_forming-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-aerobic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-anaerobic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-thermophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-psychrophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-motility-bacdive_clade-test-acc.csv.zip": ""
+    }
+}

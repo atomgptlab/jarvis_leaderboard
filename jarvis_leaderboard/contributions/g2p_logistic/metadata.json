@@ -1,0 +1,28 @@
+{
+    "model_name": "g2p_logistic",
+    "project_url": "https://github.com/JKoblitz/bacdive-AI",
+    "date_submitted": "09-07-2026",
+    "author_email": "kamal.choudhary@jhu.edu",
+    "team_name": "JHU",
+    "language": "python",
+    "os": "linux",
+    "description": "Per-trait L2 logistic regression on standardised Pfam counts. Included as the reference baseline: on this data it outperforms the published random forest, so any claimed advantage must clear it, not the published model.",
+    "time_taken_seconds": {
+        "AI-SinglePropertyClass-acidophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-gram_positive-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-spore_forming-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-aerobic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-anaerobic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-thermophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-psychrophilic-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-motility-bacdive-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-acidophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-gram_positive-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-spore_forming-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-aerobic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-anaerobic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-thermophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-psychrophilic-bacdive_clade-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-motility-bacdive_clade-test-acc.csv.zip": ""
+    }
+}
