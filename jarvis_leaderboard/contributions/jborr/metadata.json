@@ -1,0 +1,18 @@
+{
+  "name": "cfid_chem_lgbm",
+  "algorithm": "LightGBM with CFID chemical descriptors",
+  "descriptor": "CFID compositional (438-dim, molar-fraction weighted)",
+  "package": "jarvis-tools, lightgbm",
+  "task": "AI-SinglePropertyPrediction",
+  "target": "formula_energy",
+  "dataset": "ssub",
+  "split": "test",
+  "metric": "mae",
+  "test_mae_eV_per_atom": 0.1694,
+  "n_estimators": 1170,
+  "learning_rate": 0.15,
+  "num_leaves": 273,
+  "reference": "Choudhary & Tavazza, npj Comput. Mater. 6, 64 (2020)",
+  "contributor": "jborr",
+  "institution": "Johns Hopkins University"
+}
