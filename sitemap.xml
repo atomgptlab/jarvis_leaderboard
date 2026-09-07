@@ -16,6 +16,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/AgentTask/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/AgentTask/terminal_bench_core_0_1_1_task_resolved/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/AtomGen/</loc>
          <lastmod>2026-09-07</lastmod>
          <changefreq>daily</changefreq>
@@ -1877,6 +1887,11 @@
     </url>
     <url>
          <loc>https://github.com/atomgptlab/jarvis_leaderboard/QC/EigenSolver/dft_3d_electron_bands_JVASP_816_Al_WTBH/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/Special/AgentBench/</loc>
          <lastmod>2026-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
