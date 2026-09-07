@@ -321,6 +321,86 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_acidophilic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_aerobic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_anaerobic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_acidophilic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_aerobic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_anaerobic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_gram_positive/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_motility/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_psychrophilic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_spore_forming/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_clade_thermophilic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_gram_positive/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_motility/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_psychrophilic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_spore_forming/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/bacdive_thermophilic/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/atomgptlab/jarvis_leaderboard/AI/SinglePropertyClass/dft_3d_magmom_oszicar/</loc>
          <lastmod>2026-09-07</lastmod>
          <changefreq>daily</changefreq>
@@ -1902,6 +1982,11 @@
     </url>
     <url>
          <loc>https://github.com/atomgptlab/jarvis_leaderboard/Special/CHIPS_FF/</loc>
+         <lastmod>2026-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/Special/G2P/</loc>
          <lastmod>2026-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
