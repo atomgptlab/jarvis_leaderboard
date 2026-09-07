@@ -586,6 +586,11 @@
             "mat_scholar_ner_labels.json.zip": [
                 "https://doi.org/10.1021/acs.jcim.9b00470"
             ]
+        },
+        "AgentTask": {
+            "terminal_bench_core_0_1_1_task_resolved.json.zip": [
+                "https://www.tbench.ai"
+            ]
         }
     },
     "ES": {

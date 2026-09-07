@@ -1,0 +1,18 @@
+{
+    "model_name": "Chaterm + claude-4-5-sonnet",
+    "project_url": "https://github.com/laude-institute/terminal-bench-leaderboard",
+    "date_submitted": "09-06-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "terminal-bench-core==0.1.1",
+    "team_name": "Terminal-Bench leaderboard (third-party submission)",
+    "time_taken_seconds": {
+        "AI-AgentTask-task_resolved-terminal_bench_core_0_1_1-test-acc.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "terminal-bench",
+    "hardware_used": "reported by submitter; first of 5 trials, 5-trial mean 0.5250",
+    "git_url": [
+        "https://github.com/laude-institute/terminal-bench-leaderboard/tree/main/results/terminal-bench-core%400.1.1/20251010_Chaterm_claude-4-5-sonnet"
+    ]
+}

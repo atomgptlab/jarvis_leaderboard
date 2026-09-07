@@ -57,6 +57,7 @@ def make_summary_table():
         "SinglePropertyClass",
         "MLFF",
         "TextClass",
+        "AgentTask",
         "TokenClass",
         "TextSummary",
         "TextGen",
