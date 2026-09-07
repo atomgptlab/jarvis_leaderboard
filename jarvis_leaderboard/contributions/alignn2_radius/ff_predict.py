@@ -60,9 +60,10 @@ def main():
         if bf is not None:
             fP[jid] = ";".join(f"{x:.8g}" for x in at.get_forces().flatten())
         if bs is not None:
-            xx, yy, zz, yz, xz, xy = at.get_stress()
-            full9 = [xx, xy, xz, xy, yy, yz, xz, yz, zz]
-            sP[jid] = ";".join(f"{x:.8g}" for x in full9)
+            # ASE get_stress() returns 6 Voigt components
+            # [xx, yy, zz, yz, xz, xy]; the benchmark target uses the same
+            # 6-Voigt order, so write 6 (not an expanded 3x3) to match.
+            sP[jid] = ";".join(f"{x:.8g}" for x in at.get_stress())
     write_csv(a.out, f"AI-MLFF-energy-{a.dataset}-test-mae.csv",
               [[i, be[i], eP[i]] for i in ids], ["id", "target", "prediction"])
     if bf is not None:
