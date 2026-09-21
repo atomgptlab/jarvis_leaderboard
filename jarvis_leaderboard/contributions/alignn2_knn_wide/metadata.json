@@ -1,0 +1,21 @@
+{
+    "model_name": "alignn2_knn_wide",
+    "project_url": "https://github.com/atomgptlab/alignn",
+    "date_submitted": "09-21-2026",
+    "author_email": "jlee859@jh.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPTLab",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip": "120000",
+        "AI-SinglePropertyPrediction-mbj_bandgap-dft_3d-test-mae.csv.zip": "33000",
+        "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae.csv.zip": "120000"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "alignn (pure-torch 2.0), jarvis-tools, pytorch, lmdb, matscipy",
+    "hardware_used": "NVIDIA GB10 (Grace-Blackwell, aarch64, 121.7 GB unified memory), 1 GPU",
+    "notes": "Single ALIGNN 2.0 models (pure-PyTorch reimplementation), k-nearest-neighbor graph (8 A cutoff, 12 neighbors, full line graph). Published ALIGNN training recipe (lr 1e-3 one-cycle, batch 64, weight decay 1e-5, 4 ALIGNN + 4 GCN layers, 300 epochs, best-validation-checkpoint evaluation) with hidden width 768. Per property, the config was chosen on the validation split only over variants of the published recipe (hidden width 256/512/768; for optb88vdw_bandgap also EMA, learning rate, weight decay; for optb88vdw_total_energy also a formation-energy-tuned recipe and its width-768 combination). For the bandgaps, three torch-seed replicas of the selected width-768 config were trained and the validation-best replica is submitted: optb88vdw_bandgap torch_seed 231 (test MAE 0.12449 eV), mbj_bandgap torch_seed 312 (test MAE 0.25763 eV); optb88vdw_total_energy is a single run, torch_seed 123 (test MAE 0.02965 eV/atom). Trained on the exact benchmark splits (keep_data_order with the benchmark's train/val/test ordering).",
+    "git_url": [
+        "https://github.com/atomgptlab/alignn"
+    ]
+}
