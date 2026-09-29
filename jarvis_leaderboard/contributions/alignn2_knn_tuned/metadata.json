@@ -1,0 +1,19 @@
+{
+    "model_name": "alignn2_knn_tuned",
+    "project_url": "https://github.com/atomgptlab/alignn",
+    "date_submitted": "09-21-2026",
+    "author_email": "jlee859@jh.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPTLab",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip": "74000"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "alignn (pure-torch 2.0), jarvis-tools, pytorch, lmdb, matscipy",
+    "hardware_used": "NVIDIA GB10 (Grace-Blackwell, aarch64, 121.7 GB unified memory), 1 GPU",
+    "notes": "Single ALIGNN 2.0 model (pure-PyTorch reimplementation), k-nearest-neighbor graph (8 A cutoff, 12 neighbors, full line graph). Hyperparameters from a 12-trial validation-ranked random search (test split never used for selection): lr 3.54e-3 (one-cycle), batch 128, weight decay 1e-4, hidden 384, 5 ALIGNN + 4 GCN layers, n_alignn convolution, EMA weights, best-validation-checkpoint evaluation, 300 epochs, torch_seed 312. Trained on the exact benchmark split (keep_data_order with the benchmark's train/val/test ordering). Test MAE 0.02836 eV/atom.",
+    "git_url": [
+        "https://github.com/atomgptlab/alignn"
+    ]
+}

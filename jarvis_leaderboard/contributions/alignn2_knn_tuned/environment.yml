@@ -1,0 +1,15 @@
+name: alignn2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.13.0
+      - alignn @ git+https://github.com/atomgptlab/alignn.git
+      - jarvis-tools
+      - lmdb
+      - matscipy
+      - numpy
+      - scipy
+      - pydantic
