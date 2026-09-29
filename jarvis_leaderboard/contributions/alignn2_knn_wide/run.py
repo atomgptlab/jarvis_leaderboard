@@ -6,8 +6,9 @@ its pure-torch extras (torch, lmdb, matscipy, jarvis-tools). The three
 helper scripts next to this file (make_leaderboard_dataset.py,
 make_lb_configs.py, package_leaderboard.py) do the data, config and
 packaging steps.
-optb88vdw_bandgap and optb88vdw_total_energy each train in ~33 h and
-mbj_bandgap in ~9 h on one NVIDIA GB10.
+optb88vdw_bandgap trains in ~34 h, optb88vdw_total_energy in ~33 h and
+mbj_bandgap in ~9 h on one NVIDIA GB10; ehull ~33 h, bulk_modulus_kv
+~8 h and spillage ~5 h.
 
 Per property:
 1. Build the dataset directory with the exact leaderboard split baked
@@ -33,6 +34,13 @@ PROPS = [
      ("14535", "1817", "1815")),
     ("optb88vdw_total_energy", "config_lb_toten_h768.json", "123",
      "lb_toten", ("44569", "5572", "5572")),
+    # added 2026-09-26: single runs of the same recipe, seed 123
+    ("ehull", "config_lb_ehull_h768.json", "123", "lb_ehull",
+     ("44290", "5537", "5537")),
+    ("bulk_modulus_kv", "config_lb_bulk_modulus_kv_h768.json", "123",
+     "lb_bulk_modulus_kv", ("15744", "1968", "1968")),
+    ("spillage", "config_lb_spillage_h768.json", "123", "lb_spillage",
+     ("9101", "1137", "1137")),
 ]
 
 
