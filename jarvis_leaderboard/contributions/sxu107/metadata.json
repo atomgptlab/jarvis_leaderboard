@@ -1,0 +1,12 @@
+{
+    "model_name": "cfid_chem_RF",
+    "project_url": "https://github.com/Nikola08-15/jarvis_leaderboard",
+    "date_submitted": "04-09-2026",
+    "author_email": "your_email@jhu.edu",
+    "team_name": "JHU",
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,sklearn",
+    "hardware_used": "Colab",
+    "git_url": []
+}
