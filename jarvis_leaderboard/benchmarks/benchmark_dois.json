@@ -6,6 +6,12 @@
             ]
         },
         "MLFF": {
+            "chgmag_charge.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1"
+            ],
+            "chgmag_magmom.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1"
+            ],
             "alignn_ff_db_energy.json.zip": [
                 "https://doi.org/10.1039/D2DD00096B"
             ],
@@ -111,13 +117,21 @@
             "mlearn_Si_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
-            "chgmag_magmom.json.zip": [],
-            "matpes_forces.json.zip": [],
-            "matpes_stresses.json.zip": [],
-            "chgmag_charge.json.zip": [],
-            "mptrj_forces.json.zip": [],
-            "matpes_energy.json.zip": [],
-            "mptrj_energy.json.zip": []
+            "matpes_energy.json.zip": [
+                "https://doi.org/10.48550/arXiv.2503.04070"
+            ],
+            "matpes_forces.json.zip": [
+                "https://doi.org/10.48550/arXiv.2503.04070"
+            ],
+            "matpes_stresses.json.zip": [
+                "https://doi.org/10.48550/arXiv.2503.04070"
+            ],
+            "mptrj_energy.json.zip": [
+                "https://doi.org/10.1038/s42256-023-00716-3"
+            ],
+            "mptrj_forces.json.zip": [
+                "https://doi.org/10.1038/s42256-023-00716-3"
+            ]
         },
         "SinglePropertyClass": {
             "dft_3d_magmom_oszicar.json.zip": [
@@ -147,6 +161,70 @@
             "dft_3d_spillage.json.zip": [
                 "https://www.nature.com/articles/s41524-020-00440-1",
                 "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "bacdive_acidophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_aerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_anaerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_acidophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_aerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_anaerobic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_gram_positive.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_motility.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_psychrophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_spore_forming.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_clade_thermophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_gram_positive.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_motility.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_psychrophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_spore_forming.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
+            ],
+            "bacdive_thermophilic.json.zip": [
+                "https://doi.org/10.1038/s42003-025-08182-w",
+                "https://doi.org/10.5281/zenodo.13757323"
             ]
         },
         "SinglePropertyPrediction": {
@@ -470,13 +548,27 @@
             "vacancydb_oxides_train_test_ef.json.zip": [
                 "https://doi.org/10.48550/arXiv.2205.08366"
             ],
-            "twod_matpd_bandgap.json.zip": [],
-            "omdb_bandgap.json.zip": [],
-            "hmof_co2.json.zip": [],
-            "pdbbind_binding_affinity.json.zip": [],
-            "polymer_genome_gga_gap.json.zip": [],
-            "c2db_gap.json.zip": [],
-            "oqmd_ltc.json.zip": [],
+            "c2db_gap.json.zip": [
+                "https://doi.org/10.1088/2053-1583/aacfc1"
+            ],
+            "hmof_co2.json.zip": [
+                "https://doi.org/10.1038/nchem.1192"
+            ],
+            "omdb_bandgap.json.zip": [
+                "https://doi.org/10.1002/qua.25040"
+            ],
+            "pdbbind_binding_affinity.json.zip": [
+                "https://doi.org/10.1021/jm030580l"
+            ],
+            "polymer_genome_gga_gap.json.zip": [
+                "https://doi.org/10.1038/sdata.2016.12"
+            ],
+            "twod_matpd_bandgap.json.zip": [
+                "https://doi.org/10.1038/s41597-019-0097-3"
+            ],
+            "oqmd_ltc.json.zip": [
+                "https://doi.org/10.1038/npjcompumats.2015.10"
+            ],
             "alex_supercon_Tc.json.zip": [
                 "https://doi.org/10.1002/adfm.202404043"
             ],
@@ -497,8 +589,12 @@
             "edos_pdos_ph_dos.json.zip": [
                 "https://doi.org/10.1103/PhysRevMaterials.7.023803"
             ],
-            "irdb_ir.json.zip": [],
-            "mbjdiel_dielectric.json.zip": []
+            "irdb_ir.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1"
+            ],
+            "mbjdiel_dielectric.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1"
+            ]
         },
         "TextClass": {
             "arXiv_categories.json.zip": [
