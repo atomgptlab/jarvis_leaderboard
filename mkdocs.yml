@@ -27,7 +27,7 @@
 # | - https://www.mkdocs.org/user-guide/configuration/#site_url                                            |
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
-site_name: JARVIS-Leaderboard
+site_name: AtomGPTLab's JARVIS-Leaderboard
 site_url: https://github.com/atomgptlab/jarvis_leaderboard
 site_description: 'This project benchmarks performances of various methods for materials science applications using the datasets available in JARVIS-Tools databases.'
 site_author: 'Kamal Choudhary'
@@ -46,7 +46,7 @@ site_author: 'Kamal Choudhary'
 # | - https://www.mkdocs.org/user-guide/configuration/#copyright                                           |
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
-copyright: NIST Copyright, Kamal Choudhary 
+copyright:  Kamal Choudhary 
 
 # +--------------------------------------------------------------------------------------------------------+
 # |                                                                                                        |
@@ -124,7 +124,8 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   name: 'material'
-  custom_dir: overrides
+  # custom_dir: overrides
+  logo: assets/logo.png
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
   # | The Material theme allows "theme-extsnions", meaning that you can override parts of it by either     |

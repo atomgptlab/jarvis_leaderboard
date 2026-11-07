@@ -34,6 +34,11 @@ parser.add_argument(
     help="Fileoutput format, poscar/cif",
 )
 parser.add_argument(
+    "--json_key",
+    default="atoms",
+    help="JSON key for dataset",
+)
+parser.add_argument(
     "--output_path",
     default="DataPath",
     help="Path for storing the training data.",
@@ -55,6 +60,7 @@ def get_dataset(
     id_tag="",
     filename="dataset_info.json",
     out_format="poscar",
+    json_key="atoms",
 ):
     b_info = {}
     b_info["benchmark_file"] = benchmark_file
@@ -63,6 +69,7 @@ def get_dataset(
     b_info["prop"] = prop
     b_info["methods"] = method
     b_info["id_tag"] = id_tag
+    b_info["json_key"] = json_key
 
     temp = dataset + "_" + prop + ".json.zip"
     temp2 = dataset + "_" + prop + ".json"
@@ -74,12 +81,18 @@ def get_dataset(
 
     if dataset != "na":  # in ["dft_3d", "dft_2d", "qe_tb"]:
         # if dataset in ["dft_3d", "dft_2d", "qe_tb"]:
-        print("Currently for atomistic datasets only.")
-        print("https://jarvis-tools.readthedocs.io/en/master/databases.html")
+        print("Currently for following  datasets only.")
+        print("https://atomgptlab.github.io/jarvis/databases/")
         dat = data(dataset)
         info = {}
         for i in dat:
-            info[i[id_tag]] = Atoms.from_dict(i["atoms"])
+            if json_key == "atoms":
+                info[i[id_tag]] = Atoms.from_dict(i["atoms"])
+            else:
+                # print('i here',i)
+                info[str(i[id_tag])] = i[json_key]
+                # info[i[prop]] = i[json_key]
+            # print("iii",i)
 
         zp = zipfile.ZipFile(fname)
         train_val_test = json.loads(zp.read(temp2))
@@ -89,6 +102,7 @@ def get_dataset(
         if "val" in train_val_test:
             val = train_val_test["val"]
         test = train_val_test["test"]
+        # print('test',test)
         cwd = os.getcwd()
         if not os.path.exists(output_path):
             os.makedirs(output_path)
@@ -96,57 +110,64 @@ def get_dataset(
         id_prop = os.path.join(output_path, "id_prop.csv")
         f = open(id_prop, "w")
         for i, j in train.items():
-            if out_format == "poscar":
-                line = str(i) + "," + str(j) + "\n"
-                pos_name = os.path.join(output_path, str(i))
-            elif out_format == "cif":
-                # line = str(i) + ".cif," + str(j) + "\n"
-                line = str(i) + "," + str(j) + "\n"
-                pos_name = os.path.join(output_path, str(i) + ".cif")
+            # print('train i',i,j)
+            if json_key == "atoms":
+                if out_format == "poscar":
+                    line = str(i) + "," + str(j) + "\n"
+                    pos_name = os.path.join(output_path, str(i))
+                    info[i].write_poscar(pos_name)
+                elif out_format == "cif":
+                    # line = str(i) + ".cif," + str(j) + "\n"
+                    line = str(i) + "," + str(j) + "\n"
+                    pos_name = os.path.join(output_path, str(i) + ".cif")
+                    info[i].write_cif(filename=pos_name)
+                else:
+                    raise ValueError(out_format)
             else:
-                raise ValueError(out_format)
+                # print('info',info)
+                # print('here',i,j,info[i])
+                line = str(info[i]) + "," + str(j) + "\n"
             f.write(line)
-            if out_format == "poscar":
-                info[i].write_poscar(pos_name)
-            elif out_format == "cif":
-                info[i].write_cif(filename=pos_name)
-            else:
-                raise ValueError(out_format)
+            # if out_format == "poscar":
+            #    info[i].write_poscar(pos_name)
+            # elif out_format == "cif":
+            #    info[i].write_cif(filename=pos_name)
+            # else:
+            #    raise ValueError(out_format)
         for i, j in val.items():
-            if out_format == "poscar":
-                line = str(i) + "," + str(j) + "\n"
-                pos_name = os.path.join(output_path, str(i))
-            elif out_format == "cif":
-                line = str(i) + "," + str(j) + "\n"
-                # line = str(i) + ".cif," + str(j) + "\n"
-                pos_name = os.path.join(output_path, str(i) + ".cif")
+            if json_key == "atoms":
+                if out_format == "poscar":
+                    line = str(i) + "," + str(j) + "\n"
+                    pos_name = os.path.join(output_path, str(i))
+                    info[i].write_poscar(pos_name)
+                elif out_format == "cif":
+                    # line = str(i) + ".cif," + str(j) + "\n"
+                    line = str(i) + "," + str(j) + "\n"
+                    pos_name = os.path.join(output_path, str(i) + ".cif")
+                    info[i].write_cif(filename=pos_name)
+                else:
+                    raise ValueError(out_format)
             else:
-                raise ValueError(out_format)
+                # line = str(i) + "," + str(j) + "\n"
+                line = str(info[i]) + "," + str(j) + "\n"
             f.write(line)
-            if out_format == "poscar":
-                info[i].write_poscar(pos_name)
-            elif out_format == "cif":
-                info[i].write_cif(filename=pos_name)
-            else:
-                raise ValueError(out_format)
-
         for i, j in test.items():
-            if out_format == "poscar":
-                line = str(i) + "," + str(j) + "\n"
-                pos_name = os.path.join(output_path, str(i))
-            elif out_format == "cif":
-                # line = str(i) + ".cif," + str(j) + "\n"
-                line = str(i) + "," + str(j) + "\n"
-                pos_name = os.path.join(output_path, str(i) + ".cif")
+            if json_key == "atoms":
+                if out_format == "poscar":
+                    line = str(i) + "," + str(j) + "\n"
+                    pos_name = os.path.join(output_path, str(i))
+                    info[i].write_poscar(pos_name)
+                elif out_format == "cif":
+                    # line = str(i) + ".cif," + str(j) + "\n"
+                    line = str(i) + "," + str(j) + "\n"
+                    pos_name = os.path.join(output_path, str(i) + ".cif")
+                    info[i].write_cif(filename=pos_name)
+                else:
+                    raise ValueError(out_format)
             else:
-                raise ValueError(out_format)
+                # line = str(i) + "," + str(j) + "\n"
+                line = str(info[i]) + "," + str(j) + "\n"
             f.write(line)
-            if out_format == "poscar":
-                info[i].write_poscar(pos_name)
-            elif out_format == "cif":
-                info[i].write_cif(filename=pos_name)
-            else:
-                raise ValueError(out_format)
         f.close()
         print("number of training samples", len(train))
         print("number of validation samples", len(val))
@@ -170,6 +191,7 @@ if __name__ == "__main__":
     dataset = benchmark_file.split("-")[3]
     output_path = args.output_path
     out_format = args.out_format
+    json_key = args.json_key
     # method = benchmark_file.split("-")[4]
     # task = benchmark_file.split("-")[0]
     id_tag = args.id_tag
@@ -181,6 +203,7 @@ if __name__ == "__main__":
     print("task", task)
     print("id_tag", id_tag)
     print("out_format", out_format)
+    print("json_key", json_key)
 
     info = get_dataset(
         benchmark_file=benchmark_file,
@@ -191,4 +214,5 @@ if __name__ == "__main__":
         task=task,
         id_tag=id_tag,
         out_format=out_format,
+        json_key=json_key,
     )

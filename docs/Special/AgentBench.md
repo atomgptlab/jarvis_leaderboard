@@ -18,6 +18,11 @@ rather than 1.0. And some tasks penalise an agent for reasons unrelated to
 skill - one grader could not decode the video codec an agent legitimately
 chose, failing a task whose output was otherwise correct.
 
+Every task in every entry was actually attempted. Nine tasks in the first
+atomsh run were refused by an account rate limit before the agent made a
+single tool call; those nine were rerun once the limit was lifted and three of
+them resolve, which is the difference between 0.25 and the 0.2875 shown here.
+
 ## Reproducing these numbers
 
 The atomsh entry, end to end:

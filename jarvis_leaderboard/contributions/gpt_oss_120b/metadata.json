@@ -1,0 +1,18 @@
+{
+    "model_name": "GPT-OSS-120B (0-shot)",
+    "project_url": "https://huggingface.co/openai/gpt-oss-120b",
+    "date_submitted": "03-28-2026",
+    "author_email": "kzhang96@jh.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPTLab",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-mmlu-test-acc.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "DSAI cluster",
+    "git_url": [
+        "https://huggingface.co/openai/gpt-oss-120b"
+    ]
+}

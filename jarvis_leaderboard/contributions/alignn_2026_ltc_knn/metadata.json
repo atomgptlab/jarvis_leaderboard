@@ -1,0 +1,19 @@
+{
+    "model_name": "ALIGNN-2026-PureTorch-kNN",
+    "project_url": "https://github.com/atomgptlab/alignn",
+    "date_submitted": "07-26-2026",
+    "author_email": "drkamal@jhu.edu",
+    "database_version": "07-26-2026",
+    "team_name": "AtomGPTLab",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-ltc-oqmd-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "NVIDIA RTX 6000 Ada / RTX PRO 6000 Blackwell GPU",
+    "notes": "alignn_atomwise_pure (kNN full-graph cutoff 8, n_alignn), log10(LTC). Target = log10(lattice thermal conductivity, W/mK) from Ojih et al. 2023 (J. Mater. Chem. A) DFT LTC on OQMD structures (4034/4041 recovered; missing via OQMD REST API). 300 epochs, AdamW+OneCycle, L1 loss, cgcnn features, 80/10/10 random split (seed 123).",
+    "git_url": [
+        "https://github.com/atomgptlab/alignn"
+    ]
+}

@@ -16,6 +16,7 @@ def process_benchmarks(
     height=800,
     desired_order=None,
     add_links=True,
+    showscale=True,
 ):
     mem = {}
     # Collect contributions
@@ -55,7 +56,7 @@ def process_benchmarks(
             metric = temp[-1]
 
             md_filename = (
-                "https://pages.nist.gov/jarvis_leaderboard/"
+                "https://atomgptlab.github.io/jarvis_leaderboard/"
                 # "../docs/"
                 + category
                 # + method
@@ -126,7 +127,8 @@ def process_benchmarks(
     # print('df_reordered',df_reordered)
     # Plot and save
     fig = px.imshow(df_reordered, text_auto=True)
-    fig.update_layout(width=width, height=height)
+    fig.update_layout(width=width, height=height,coloraxis_showscale=showscale)
+    #fig.update_traces(showscale=False)
     save_md(fig=fig, md_path=md_path, detailed_links=detailed_links)
 
 
@@ -199,6 +201,68 @@ if __name__ == "__main__":
         "AI-SinglePropertyPrediction-vac_en-dft_3d_chipsff-test-mae.csv.zip",
     ]
 
+    prop_pred_benchmarks = [
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mbj_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-bulk_modulus_kv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-shear_modulus_gv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-slme-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip",
+    ]
+    # inverse_atom_benchmarks = [
+    #    "AI-AtomGen-Tc_supercon-dft_3d-test-rmse.csv.zip",
+    #    "AI-AtomGen-Tc-alex_supercon-test-rmse.csv.zip",
+    # ]
+    inverse_atom_benchmarks = [
+        "AI-AtomGen-Tc_a-alex_supercon-test-mae.csv.zip",
+        "AI-AtomGen-Tc_alpha-alex_supercon-test-mae.csv.zip",
+        "AI-AtomGen-Tc_b-alex_supercon-test-mae.csv.zip",
+        "AI-AtomGen-Tc_beta-alex_supercon-test-mae.csv.zip",
+        "AI-AtomGen-Tc_c-alex_supercon-test-mae.csv.zip",
+        "AI-AtomGen-Tc_gamma-alex_supercon-test-mae.csv.zip",
+        "AI-AtomGen-Tc_supercon_a-dft_3d-test-mae.csv.zip",
+        "AI-AtomGen-Tc_supercon_alpha-dft_3d-test-mae.csv.zip",
+        "AI-AtomGen-Tc_supercon_b-dft_3d-test-mae.csv.zip",
+        "AI-AtomGen-Tc_supercon_beta-dft_3d-test-mae.csv.zip",
+        "AI-AtomGen-Tc_supercon_c-dft_3d-test-mae.csv.zip",
+        "AI-AtomGen-Tc_supercon_gamma-dft_3d-test-mae.csv.zip",
+    ]
+    prop_pred_benchmarks_more = [
+        "AI-SinglePropertyPrediction-avg_elec_mass-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-avg_hole_mass-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-bulk_modulus_kv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-dfpt_piezo_max_dielectric-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-dfpt_piezo_max_dij-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-ehull-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-encut-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-energy_per_atom-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-epsx-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-epsy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-epsz-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-f_enp-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-final_energy-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-indir_gap-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-kpoint_length_unit-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-magmom_oszicar-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-max_efg-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mbj_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mepsx-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mepsy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mepsz-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-n_Seebeck-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-n_powerfact-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-ph_heat_capacity-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-shear_modulus_gv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-slme-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip",
+    ]
+
     agent_benchmarks = [
         "AI-AgentTask-task_resolved-terminal_bench_core_0_1_1-test-acc.csv.zip",
     ]
@@ -244,4 +308,23 @@ if __name__ == "__main__":
         metric="pearsonr",
         replacements=["AI-SinglePropertyPrediction-", "-test-mae.csv.zip"],
         md_path="CHIPS_FF.md",
+    )
+    process_benchmarks(
+        benchmarks=prop_pred_benchmarks,
+        metric="pearsonr",
+        replacements=["AI-SinglePropertyPrediction-", "-test-mae.csv.zip"],
+        md_path="PropertyPrediction.md",
+    )
+    process_benchmarks(
+        benchmarks=inverse_atom_benchmarks,
+        metric="pearsonr",
+        replacements=[
+            "AI-AtomGen-",
+            "-test-mae.csv.zip",
+            "-test-rmse.csv.zip",
+        ],
+        showscale=False,
+        md_path="AtomGenBench.md",
+        width=1200,
+        height=500,
     )

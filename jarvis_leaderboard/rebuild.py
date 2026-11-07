@@ -13,6 +13,7 @@ import requests
 from jarvis.io.vasp.inputs import Poscar
 import plotly.graph_objects as go
 from scipy import stats
+from tqdm import tqdm
 
 # from mkdocs import utils
 
@@ -56,6 +57,7 @@ def make_summary_table():
         "SinglePropertyClass",
         "MLFF",
         "TextClass",
+        "AgentTask",
         "TokenClass",
         "TextSummary",
         "TextGen",
@@ -199,7 +201,7 @@ def make_summary_table():
             n_users = []
             try:
                 rq = requests.get(
-                    "https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors"
+                    "https://api.github.com/repos/atomgptlab/jarvis_leaderboard/contributors"
                 ).json()
                 for u in rq:
                     if u["login"] not in ["dependabot[bot]"]:
@@ -209,7 +211,7 @@ def make_summary_table():
                 pass
 
             temp = (
-                '<h3>Contribution Guide</h3><p>Contributors: <a href="https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors" >'
+                '<h3>Contribution Guide</h3><p>Contributors: <a href="https://github.com/atomgptlab/jarvis_leaderboard/graphs/contributors" >'
                 + str(len(n_users))
                 + "</a></p>"
             )
@@ -243,6 +245,7 @@ def get_metric_value(
     plot_filename=None,
     metric=None,
 ):
+    # print("csv path is: ", csv_path)
     fname = csv_path.split("/")[-1].split(".csv.zip")[0]
     contribution = csv_path.split("/")[-2]
     temp = fname.split("-")
@@ -273,7 +276,7 @@ def get_metric_value(
     results["project_url"] = meta_data["project_url"]
     results["num_entries"] = len(csv_data)
     results["github_url"] = (
-        "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/"
+        "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/"
         + contribution
     )  # meta_path.split('metadata.json')[0]
 
@@ -321,8 +324,9 @@ def get_metric_value(
         errors.append([csv_path, len(csv_data), len(actual_df)])
 
     df = pd.merge(csv_data, actual_df, on="id")
-    # print('csv',csv_path)
-    # print ('df',df)
+    # print("csv", csv_path)
+    # print("df", df)
+    # print("actual_df", actual_df)
     # print('csv_data',csv_data)
     # print('actual_df',actual_df)
     results["res"] = "na"
@@ -461,35 +465,34 @@ def get_metric_value(
         results["res"] = round(scores, 4)
         print("rouge scores", scores)
     if metric == "rmse" and subcat == "AtomGen":
-        print("AtomGen")
+        print("AtomGen", df)
         from pymatgen.analysis.structure_matcher import StructureMatcher
 
+        # matcher = StructureMatcher(stol=0.5, angle_tol=10, ltol=0.3)
         matcher = StructureMatcher(stol=0.5, angle_tol=10, ltol=0.3)
         rms = []
         for m, mm in df.iterrows():
-            try:
-                atoms_target = (
-                    Poscar.from_string(
-                        (mm["actual"].replace("\\n", "\n"))
-                    ).atoms
-                ).pymatgen_converter()
-                atoms_pred = (
-                    Poscar.from_string(
-                        (mm["prediction"].replace("\\n", "\n"))
-                    ).atoms
-                ).pymatgen_converter()
-                # rms_dist = matcher.get_rms_dist(atoms_pred,atoms_target)
-                rms_dist = matcher.get_rms_anonymous(atoms_pred, atoms_target)
-                if rms_dist[0] is not None:
-                    rms.append(rms_dist[0])
-            except Exception as exp:
-                print("exp", exp)
-                pass
-        try:
-            rms = round(np.array(rms).mean(), 4)
-        except:
-            rms = -9999
-            pass
+            atoms_target = Poscar.from_string(
+                (mm["actual"].replace("\\n", "\n"))
+            ).atoms
+            atoms_pred = Poscar.from_string(
+                (mm["prediction"].replace("\\n", "\n"))
+            ).atoms
+            # print("atoms_target", atoms_target)
+            # print("atoms_pred", atoms_pred)
+            rms_dist = matcher.get_rms_dist(
+                atoms_pred.pymatgen_converter(),
+                atoms_target.pymatgen_converter(),
+            )
+            # rms_dist = np.abs(
+            #    atoms_target.lattice.abc[0] - atoms_pred.lattice.abc[0]
+            ##    #atoms_target.volume - atoms_pred.volume
+            # )  # matcher.get_rms_anonymous(atoms_pred, atoms_target)
+            # print('rms_dist',rms_dist)
+            if rms_dist is not None:
+                rms.append(rms_dist[0])
+            # rms.append(rms_dist)
+        rms = round(np.array(rms).mean(), 4)
         results["res"] = rms
         # import sys
         # sys.exit()
@@ -681,8 +684,7 @@ def get_results(
         results = []
     # for i in glob.glob("../contributions/*/AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip"):
     for i in glob.glob(search):
-        # print(i)
-        res = get_metric_value(csv_path=i,metric=metric)
+        res = get_metric_value(csv_path=i, metric=metric)
         # print (res['res'],res['random_guessing_performance'])
         if include_random:
             rand = res["random_guessing_performance"]
@@ -800,8 +802,8 @@ def get_metric_value_old(
     results["project_url"] = meta_data["project_url"]
     results["num_entries"] = len(csv_data)
     results["github_url"] = (
-        "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/"
-        # "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
+        "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/"
+        # "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
         + bench_name
     )  # meta_path.split('metadata.json')[0]
 
@@ -906,7 +908,11 @@ def rebuild_pages(
     unique_fname = []
     os.chdir(root_dir + "/..")
     num_data = 0
+    all_zips = []
     for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
+        all_zips.append(i)
+    for i in tqdm(all_zips, total=len(all_zips)):
+        # if "AtomGen" in i:
         bnch_tmp = i.split("/")[-1]
         if bnch_tmp not in exclude_benchs:
             # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
@@ -968,7 +974,9 @@ def rebuild_pages(
     # jarvis_leaderboard/dataset/AI/dft_3d_exfoliation_energy.json
     dat = []
     md_files = []
-    for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
+    # for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
+    for i in tqdm(all_zips, total=len(all_zips)):
+        # if "AtomGen" in i:
         bnch_tmp = i.split("/")[-1]
         if bnch_tmp not in exclude_benchs:
             # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
@@ -1020,7 +1028,7 @@ def rebuild_pages(
             notes = ""
             notes = (
                 '<a href="'
-                + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
+                + "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/"
                 + i
                 + '" target="_blank">CSV</a>'
             )
@@ -1029,14 +1037,14 @@ def rebuild_pages(
             # json_path = method + "/" + submod + "/" + json_name
             json_url = (
                 '<a href="'
-                + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
-                # + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
+                + "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
+                # + "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
                 + json_path
                 + '" target="_blank">JSON</a>'
             )
             metadata = (
                 '<a href="'
-                + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
+                + "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/"
                 + "jarvis_leaderboard/contributions/"
                 # + "jarvis_leaderboard/benchmarks/"
                 + bench_name
@@ -1045,7 +1053,7 @@ def rebuild_pages(
             )
             runsh = (
                 '<a href="'
-                + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
+                + "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/"
                 + "jarvis_leaderboard/contributions/"
                 # + "jarvis_leaderboard/benchmarks/"
                 + bench_name
@@ -1536,7 +1544,7 @@ def rebuild_pages(
                     + "["
                     + str(n_methods)
                     + "]"
-                    + "(https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions)"
+                    + "(https://github.com/atomgptlab/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions)"
                     # + str(n_methods)
                     # + str(len(dat))
                     # + "\n"
@@ -1554,7 +1562,7 @@ def rebuild_pages(
                 n_users = []
                 try:
                     rq = requests.get(
-                        "https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors"
+                        "https://api.github.com/repos/atomgptlab/jarvis_leaderboard/contributors"
                     ).json()
                     for u in rq:
                         if u["login"] not in ["dependabot[bot]"]:
@@ -1568,7 +1576,7 @@ def rebuild_pages(
                     + "["
                     + str(len(n_users))
                     + "]"
-                    + "(https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors)"
+                    + "(https://github.com/atomgptlab/jarvis_leaderboard/graphs/contributors)"
                     # + str(len(dat))
                     # + "\n"
                 )

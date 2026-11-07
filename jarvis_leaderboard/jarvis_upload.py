@@ -197,7 +197,7 @@ def upload():
         + username
         + ':main"}'
         + "'"
-        + " https://api.github.com/repos/usnistgov/jarvis_leaderboard/pulls"
+        + " https://api.github.com/repos/atomgptlab/jarvis_leaderboard/pulls"
     )
     print(cmd)
     os.system(cmd)
