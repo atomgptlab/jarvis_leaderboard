@@ -66,6 +66,15 @@ body {
 
 
 <h1 style="text-align:center;">Explore State-of-the-Art Materials Design Methods</h1>
+
+<p style="text-align:center;margin:2px 0 20px;font-size:15px;line-height:1.5;">
+Explore these benchmarks interactively with the
+<a href="https://atomgpt.org/leaderboard" target="_blank"><b>AtomGPTLab JARVIS-Leaderboard Explorer</b></a>
+&mdash; pick a category, task, property and dataset and see every contribution's
+predictions plotted against the reference values, follow one model across every
+benchmark it entered, and get the exact steps to add your own:
+<a href="https://atomgpt.org/leaderboard" target="_blank">atomgpt.org/leaderboard</a>
+</p>
 <div class="row">
   <div class="column">
     <div class="card">
