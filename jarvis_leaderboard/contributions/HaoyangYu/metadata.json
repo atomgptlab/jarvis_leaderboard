@@ -1,0 +1,15 @@
+{
+    "model_name": "CFID_RF_Model",
+    "project_url": "https://github.com/HAOYANG-YU679/jarvis_leaderboard",
+    "date_submitted": "04-09-2026",
+    "author_email": "hyu104@jh.edu",
+    "database_version": "unknown",
+    "team_name": "JHU",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,pandas,scikit-learn",
+    "hardware_used": "colab"
+}
