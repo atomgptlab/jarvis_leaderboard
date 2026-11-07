@@ -1,0 +1,13 @@
+{
+  "model": "RandomForestRegressor (CFID descriptors)",
+  "description": "Random Forest trained on CFID chemical-only descriptors for formation energy prediction.",
+  "authors": [
+    "Your Name"
+  ],
+  "github_url": "https://github.com/YOURUSERNAME/jarvis_leaderboard",
+  "notebook": "your_notebook_name.ipynb",
+  "mae": 0.2187,
+  "dataset": "ssub",
+  "target": "formula_energy",
+  "descriptor": "CFID (get_chem_only_descriptors)"
+}
