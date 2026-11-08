@@ -5,7 +5,7 @@
 #   filter_type = FrechetCellFilter instead of ExpCellFilter (chipsff needed a
 #     small patch to accept it; upstream only implemented ExpCellFilter)
 #   chemical potentials from this model: mptrj_ep46_chempots.json (this dir)
-# form_en covers 103/104 jids (no Sr reference).
+# form_en is not submitted yet: 103/104 jids (no Sr reference with this model).
 set -e
 HERE="$(cd "$(dirname "$0")" && pwd)"
 export MODEL=${MODEL:-/home/kamalch/alignn2026/mptrj_frontier/Out_MP20}
