@@ -568,6 +568,21 @@
             ],
             "oqmd_ltc.json.zip": [
                 "https://doi.org/10.1038/npjcompumats.2015.10"
+            ],
+            "alex_supercon_Tc.json.zip": [
+                "https://doi.org/10.1002/adfm.202404043"
+            ],
+            "alex_supercon_dosef.json.zip": [
+                "https://doi.org/10.1002/adfm.202404043"
+            ],
+            "alex_supercon_debye.json.zip": [
+                "https://doi.org/10.1002/adfm.202404043"
+            ],
+            "alex_supercon_la.json.zip": [
+                "https://doi.org/10.1002/adfm.202404043"
+            ],
+            "alex_supercon_wlog.json.zip": [
+                "https://doi.org/10.1002/adfm.202404043"
             ]
         },
         "Spectra": {
@@ -590,6 +605,12 @@
             ],
             "pubchem_categories.json.zip": [
                 "https://doi.org/10.1093/nar/gkaa971"
+            ],
+            "gpqa_diamond_test_quiz.json.zip": [
+                "https://doi.org/10.48550/arXiv.2311.12022"
+            ],
+            "aime_2024_test_quiz.json.zip": [
+                "https://huggingface.co/datasets/HuggingFaceH4/aime_2024"
             ]
         },
         "TextGen": {
