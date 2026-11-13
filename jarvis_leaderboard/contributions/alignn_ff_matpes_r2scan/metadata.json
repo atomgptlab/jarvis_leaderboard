@@ -1,22 +1,29 @@
 {
-  "model_name": "ALIGNN-FF MATPES-R2SCAN",
+  "model_name": "alignn_ff_matpes_r2scan",
   "project_url": "https://github.com/atomgptlab/alignn",
-  "date_submitted": "08-17-2026",
-  "author_email": "writetokamal.1989@gmail.com",
-  "database_version": "08-2026",
+  "date_submitted": "11-13-2026",
+  "author_email": "jlee859@jh.edu",
+  "database_version": "09-24-2025",
   "team_name": "AtomGPTLab",
   "time_taken_seconds": {
-    "AI-SinglePropertyPrediction-form_en-dft_3d_chipsff-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-c11-dft_3d_chipsff-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-c44-dft_3d_chipsff-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-kv-dft_3d_chipsff-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-vac_en-dft_3d_chipsff-test-mae.csv.zip": "",
-    "AI-SinglePropertyPrediction-surf_en-dft_3d_chipsff-test-mae.csv.zip": ""
+    "AI-SinglePropertyPrediction-a-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-b-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-c-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-vol-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-kv-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-c11-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-c44-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-form_en-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-surf_en-dft_3d_chipsff-test-mae.csv.zip": "10561",
+    "AI-SinglePropertyPrediction-vac_en-dft_3d_chipsff-test-mae.csv.zip": "10561"
   },
+  "language": "python",
+  "os": "linux",
+  "software_used": "chipsff, alignn (pure-torch), jarvis-tools, ase, elastic, torch, numpy, scipy",
+  "hardware_used": "CPU cluster node, no GPU",
+  "notes": "Submitted by Jaehyung Lee. ALIGNN-FF universal force field alignn_ff_matpes_r2scan (2026 element-embedding model trained on MatPES-r2SCAN; alignn_atomwise_pure, 4 ALIGNN + 4 GCN layers, 256 hidden features, 256-dimensional learned element embedding added to the embedded CGCNN atom features; weights from figshare article 34846446). All ten files come from one CHIPS-FF run_main.py run at chipsff commit 1e31598, from the pull request merged into atomgptlab/chipsff develop as cd71579 (the later commits in that merge change only input checks, leaderboard export, number types, phonon code, documentation and tests, none of which change these properties): python -m chipsff.run_main --alignn_ff --model_path alignn_ff_matpes_r2scan --device cpu --tasks optimize,elastic,surface,vacancy (FIRE with FrechetCellFilter, fmax 0.05 eV/A, up to 200 steps, conventional cells, stress weight 1.0). kv is the bulk modulus from the energy-volume fit. c11 and c44 come from the elastic package; c44 is the Voigt yz shear component (the benchmark's c44 reference is currently element [3][3] of the JARVIS tensor, which is C66 for non-cubic materials). form_en uses element energies computed by run_main.py with the same model (single-point energies of the JARVIS elemental structures). Vacancies and surfaces are relaxed from the relaxed bulk; vac_en uses the site whose vacancydb entry is the benchmark's reference. Structures and the run's reference values come from JARVIS dft_3d 9-24-2025. As in chipsff, the E-V scan keeps fractional atomic coordinates fixed, and surface and vacancy energies use the minimum of the E-V fit as the bulk reference. a, b, c and vol are for the JARVIS stored cell: package_leaderboard.py writes each stored-cell vector as a lattice translation of the conventional cell and applies it to the relaxed conventional cell. time_taken_seconds is the sum of the per-material run times chipsff recorded (104 materials, on CPU), the same for every file because one run produced all ten.",
   "git_url": [
     "https://github.com/atomgptlab/alignn",
-    "https://github.com/usnistgov/chipsff"
-  ],
-  "software_used": "python, alignn, chipsff, jarvis-tools, ase, torch",
-  "hardware_used": "NVIDIA GPU workstation (chipsff relaxations, CPU fallback)"
+    "https://github.com/atomgptlab/chipsff"
+  ]
 }
