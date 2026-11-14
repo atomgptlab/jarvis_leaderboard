@@ -1,0 +1,23 @@
+{
+  "model_name": "LightGBM_layer_geometry_exfoliation",
+  "team_name": "AcuVizionAI, Belgium",
+  "author_email": "kamran.soleimani@acuvizionai.be",
+  "project_url": "https://github.com/AcuVizionAI/LightGBM_layer_geometry_exfoliation",
+  "git_url": [
+    "https://github.com/AcuVizionAI/LightGBM_layer_geometry_exfoliation"
+  ],
+  "date_submitted": "10-23-2026",
+  "database_version": "12-12-2022",
+  "language": "python",
+  "os": "Linux (Ubuntu under WSL2)",
+  "software_used": "LightGBM 4.6.0; NumPy 1.26.4; pandas 2.3.3; pymatgen 2025.10.7; exact dependencies in requirements.txt",
+  "hardware_used": "Intel(R) Core(TM) i5-10600KF CPU @ 4.10GHz; CPU only, 4 threads",
+  "time_taken_seconds": {
+    "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip": 17.763416
+  },
+  "timing_scope": "Final estimator fit plus 81-structure feature extraction and prediction; excludes development CV, training-feature extraction, installation and data download",
+  "model_description": "Fixed L1 LightGBM, 600 trees, 196 base features plus 10 layer-geometry descriptors and validity flag; native NaN; no split_name input.",
+  "training_protocol": "Single seed 0; final fit on 650 official train rows only. Recipe selected by development CV on 731 train+validation rows.",
+  "evaluation_provenance": "One newly frozen candidate. Historical V7 audits previously examined this public test benchmark; globally blind test independence is not claimed.",
+  "package_license": "Benchmark reproduction and evaluation only; submitted predictions, metadata and external wrapper may be redistributed under leaderboard terms."
+}
