@@ -1,0 +1,17 @@
+{
+  "model_name": "HYD-local-environment-HGB",
+  "project_url": "https://github.com/donkeey11/jarvis_leaderboard",
+  "git_url": [
+    "https://github.com/donkeey11/jarvis_leaderboard"
+  ],
+  "date_submitted": "10-29-2026",
+  "author_email": "949801198@qq.com",
+  "team_name": "HYD",
+  "language": "python",
+  "os": "macOS",
+  "time_taken_seconds": {
+    "AI-SinglePropertyClass-magmom_oszicar-dft_3d-test-acc.csv.zip": 6.193992916960269
+  },
+  "software_used": "Python 3.12.14; scikit-learn 1.9.1; MatMiner 0.10.1; pymatgen 2026.10.24; numpy 2.5.4",
+  "hardware_used": "Apple Silicon CPU with 24 GB RAM for the selected HGB fit; NVIDIA A100-SXM4-80GB for independent XGBoost comparisons"
+}

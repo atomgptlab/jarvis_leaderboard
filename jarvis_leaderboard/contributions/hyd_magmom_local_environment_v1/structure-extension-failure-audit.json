@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-10-29T07:45:23.918557+00:00",
+  "failure_policy": "Retain every row; failed structural descriptors are NaN",
+  "test_accessed": false,
+  "splits": {
+    "train": {
+      "rows": 41766,
+      "failed_rows": 1267,
+      "failure_fraction": 0.03033567973950103,
+      "cache_sha256": "39386e950c4b4789445ad265e44799bb304aabfdba25e4726b9d0b5e8aef8c46",
+      "script_sha256": "1cff53702181cdb773109db46697d69226225c9b5de1127e505e0f15b74a4464"
+    },
+    "val": {
+      "rows": 5221,
+      "failed_rows": 183,
+      "failure_fraction": 0.03505075656004597,
+      "cache_sha256": "0241861840ba0611485bf6f3e4b0aa4e279a321dbe11a01dbeeb5c4ace3e609f",
+      "script_sha256": "1cff53702181cdb773109db46697d69226225c9b5de1127e505e0f15b74a4464"
+    }
+  }
+}

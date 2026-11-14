@@ -1,0 +1,50 @@
+{
+  "benchmark": "AI/SinglePropertyClass/dft_3d_magmom_oszicar",
+  "raw_count": 75993,
+  "official_counts": {
+    "train": 41766,
+    "val": 5222,
+    "test": 5222
+  },
+  "export_counts": {
+    "train": 41766,
+    "val": 5221,
+    "test": 5222
+  },
+  "excluded_from_internal_validation": [
+    "JVASP-113961"
+  ],
+  "train_val_label_counts": {
+    "train": {
+      "0": 32545,
+      "1": 9221
+    },
+    "val": {
+      "1": 1092,
+      "0": 4129
+    }
+  },
+  "export_split_ids_disjoint": true,
+  "all_ids_present": true,
+  "structure_fields": [
+    "lattice_mat",
+    "coords",
+    "elements",
+    "cartesian"
+  ],
+  "test_targets_exported": false,
+  "train_val_labels_verified": "1 if raw magmom_oszicar > 0.05 else 0; no absolute value",
+  "source_sha256": {
+    "data/dft_3d_magmom_oszicar/01_raw_data/jdft_3d-12-12-2022.json": "72da38713e509195220771b83b07cbd2d21f5d0d5cc203e1067dd597465b0b35",
+    "data/dft_3d_magmom_oszicar/02_benchmark_split/dft_3d_magmom_oszicar.json.zip": "72f69295a471e0bae0adce23831cafc731a0ae1a1df5ec5c52f645ea98e913eb"
+  },
+  "export_sha256": {
+    "train.jsonl": "3bfddcc8a43410818fd76eda79d90d7984426f7ac9567c730ebd832a718c69dc",
+    "val.jsonl": "8c817dcc66e6ecafc6fb27222f53653d29061d02b30990872701a6598d0e8087",
+    "test.jsonl": "e424ff65dd60a5c946b5cb3beecae240a079b603a326fd5f922065f2c5d411a8"
+  },
+  "limitations": [
+    "The initial export checks IDs only. See structure-duplicates.json for the subsequent rounded fractional-coordinate audit; it does not find every symmetry-equivalent structure."
+  ],
+  "subsequent_structure_audit": "structure-duplicates.json"
+}

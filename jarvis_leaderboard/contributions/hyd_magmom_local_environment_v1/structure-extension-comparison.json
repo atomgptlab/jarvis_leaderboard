@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-10-29T07:47:54.761426+00:00",
+  "runs": [
+    {
+      "run": "hgb-structure562-full-leaf127-s17",
+      "validation_accuracy": 0.9524995211645279,
+      "novel_validation_accuracy": 0.9522801616317106,
+      "test_accessed": false
+    },
+    {
+      "run": "hgb-structure562-full-leaf127-s43",
+      "validation_accuracy": 0.9524995211645279,
+      "novel_validation_accuracy": 0.9522801616317106,
+      "test_accessed": false
+    },
+    {
+      "run": "hgb-structure562-full-leaf127-s97",
+      "validation_accuracy": 0.9524995211645279,
+      "novel_validation_accuracy": 0.9522801616317106,
+      "test_accessed": false
+    }
+  ],
+  "selection_metric": "novel_validation_accuracy",
+  "best_current_run": "hgb-geometry434-full-leaf127-s17",
+  "test_accessed": false,
+  "official_rank_claimed": false
+}

@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-29T07:49:30.050275+00:00",
+  "upstream_source_commit": "c2162d37c02da265e10b6e59915d238db5aa9d3c",
+  "upstream_get_metric_value": 0.9527,
+  "test_accuracy_unrounded": 0.9527001148985064,
+  "correct": 4975,
+  "rows": 5222,
+  "freeze_sha256": "094518c528b671e1912b6b6ffe3ed5c922e2749af36db2535e53fad1f6cd040b",
+  "selection_matches_pretest_freeze": true,
+  "test_labels_used_only_for_postfreeze_scoring": true,
+  "test_labels_used_for_model_selection": false,
+  "official_public_rank_confirmed": false,
+  "errors": []
+}

@@ -1,0 +1,11 @@
+{
+  "rows": 41766,
+  "features": 434,
+  "seconds": 67.08627058297861,
+  "training_labels_sha256": "cd8153a2cb601530fe0956b3e4d1c4c27c8282487713c0f0cdeccb1b36a98b61",
+  "training_config_sha256": "e2cfaeb43cd310145b7c067e9db313387270e6487bbff93bfc13a5aa275569c4",
+  "model_sha256": "9c092cede36c806bc2270e61f79d0d4b5febc8935d174dcafedad3e52e6aa5e3",
+  "official_validation_labels_read": false,
+  "test_labels_read": false,
+  "parameters_frozen_before_retraining": true
+}

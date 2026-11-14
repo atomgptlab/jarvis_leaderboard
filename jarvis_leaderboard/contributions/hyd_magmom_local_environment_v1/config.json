@@ -1,0 +1,186 @@
+{
+  "run_name": "hgb-geometry434-full-leaf127-s17",
+  "model": "hgb",
+  "append_basic": true,
+  "append_geometry": true,
+  "append_matminer_structure": false,
+  "refit_full": true,
+  "seed": 17,
+  "max_iter": 1600,
+  "leaf_nodes": 127,
+  "learning_rate": 0.06,
+  "l2": 1.0,
+  "threads": 4,
+  "started_at": "2026-10-29T07:09:04.902280+00:00",
+  "feature_count": 434,
+  "feature_manifests": {
+    "geometry_train": {
+      "split": "train",
+      "shape": [
+        41766,
+        160
+      ],
+      "seconds": 4.744449041085318,
+      "source_sha256": "3bfddcc8a43410818fd76eda79d90d7984426f7ac9567c730ebd832a718c69dc",
+      "script_sha256": "60115ab3ef563b70e42dbd31add7c684745669bdd5cd6328af592c4cd20e15fa",
+      "test_labels_accessed": false,
+      "timing_only": false,
+      "cache_sha256": "bbeabf641fbb943b2ee77eb6d1425679601140091a12cdcf0bf48d7f695d51c6"
+    },
+    "train": {
+      "feature_set": "matminer145",
+      "shape": [
+        41766,
+        145
+      ],
+      "input_sha256": "3bfddcc8a43410818fd76eda79d90d7984426f7ac9567c730ebd832a718c69dc",
+      "cache_sha256": "0ddc41e9ea512695baa7c4416f69f1b18793acbfd2a462cbf39054dc77e4271e",
+      "feature_source_sha256": "de0c5ba1def74022731e79135af609912eace485078519acc6d04e9f0feafcdd",
+      "packages": {
+        "matminer": "0.10.1",
+        "pymatgen": "2026.10.24",
+        "numpy": "2.5.4"
+      },
+      "nan_rows": 18,
+      "nan_by_feature": {
+        "MagpieData minimum MeltingT": 8,
+        "MagpieData maximum MeltingT": 8,
+        "MagpieData range MeltingT": 8,
+        "MagpieData mean MeltingT": 8,
+        "MagpieData avg_dev MeltingT": 8,
+        "MagpieData mode MeltingT": 2,
+        "MagpieData minimum Electronegativity": 18,
+        "MagpieData maximum Electronegativity": 18,
+        "MagpieData range Electronegativity": 18,
+        "MagpieData mean Electronegativity": 18,
+        "MagpieData avg_dev Electronegativity": 18,
+        "MagpieData mode Electronegativity": 6,
+        "max ionic char": 17,
+        "avg ionic char": 17
+      },
+      "seconds": 18.003647874982562,
+      "test_labels_accessed": false,
+      "reference": "Official matminer_xgboost/run.py composition descriptors only; no 128 structural descriptors yet"
+    },
+    "geometry_val": {
+      "split": "val",
+      "shape": [
+        5221,
+        160
+      ],
+      "seconds": 0.6978901249822229,
+      "source_sha256": "8c817dcc66e6ecafc6fb27222f53653d29061d02b30990872701a6598d0e8087",
+      "script_sha256": "60115ab3ef563b70e42dbd31add7c684745669bdd5cd6328af592c4cd20e15fa",
+      "test_labels_accessed": false,
+      "timing_only": false,
+      "cache_sha256": "5ef62f3ea6009b061edcb9bf5d2b8d9d010d3e9e7a12e0b386cd2c6ce1791065"
+    },
+    "val": {
+      "feature_set": "matminer145",
+      "shape": [
+        5221,
+        145
+      ],
+      "input_sha256": "8c817dcc66e6ecafc6fb27222f53653d29061d02b30990872701a6598d0e8087",
+      "cache_sha256": "7119dae0cc424c18f60f231bbb1395fe03366212dbadf8b7daf170761767378e",
+      "feature_source_sha256": "de0c5ba1def74022731e79135af609912eace485078519acc6d04e9f0feafcdd",
+      "packages": {
+        "matminer": "0.10.1",
+        "pymatgen": "2026.10.24",
+        "numpy": "2.5.4"
+      },
+      "nan_rows": 3,
+      "nan_by_feature": {
+        "MagpieData minimum MeltingT": 1,
+        "MagpieData maximum MeltingT": 1,
+        "MagpieData range MeltingT": 1,
+        "MagpieData mean MeltingT": 1,
+        "MagpieData avg_dev MeltingT": 1,
+        "MagpieData mode MeltingT": 1,
+        "MagpieData minimum Electronegativity": 3,
+        "MagpieData maximum Electronegativity": 3,
+        "MagpieData range Electronegativity": 3,
+        "MagpieData mean Electronegativity": 3,
+        "MagpieData avg_dev Electronegativity": 3,
+        "MagpieData mode Electronegativity": 3,
+        "max ionic char": 2,
+        "avg ionic char": 2
+      },
+      "seconds": 1.9500936249969527,
+      "test_labels_accessed": false,
+      "reference": "Official matminer_xgboost/run.py composition descriptors only; no 128 structural descriptors yet"
+    }
+  },
+  "model_parameters": {
+    "categorical_features": "from_dtype",
+    "class_weight": null,
+    "early_stopping": true,
+    "interaction_cst": null,
+    "l2_regularization": 1.0,
+    "learning_rate": 0.06,
+    "loss": "log_loss",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 1600,
+    "max_leaf_nodes": 127,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 30,
+    "random_state": 17,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "source_sha256": {
+    "cache_geometry.py": "60115ab3ef563b70e42dbd31add7c684745669bdd5cd6328af592c4cd20e15fa",
+    "audit_structure_duplicates.py": "de04e1dfae84dcfb63cf2c0a49e2d597f64e9afdcbb753be41010b3a5ee30396",
+    "train_cached.py": "89e42ec13111132565cabd60b51db2a35f19fa8dd7d29d2540fc2775abdfa903",
+    "prepare_data.py": "1957de39b2e1e0c39b908cd2f9c5c151852b71e1e6ebdaec845efc7ee0a08615",
+    "cache_matminer.py": "de0c5ba1def74022731e79135af609912eace485078519acc6d04e9f0feafcdd",
+    "features.py": "cca3b44be553fd9bddcf317f07346e9f327c00a19b9f173204f4b339cc48d1e1",
+    "cache_matminer_structure.py": "1cff53702181cdb773109db46697d69226225c9b5de1127e505e0f15b74a4464"
+  },
+  "structure_audit_sha256": "8879b5b01afbadef27d04779fdcc4ba98689009c5608d3173f0e0695e7d9917a",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matminer": "0.10.1",
+    "pymatgen": "2026.10.24",
+    "joblib": "1.6.0"
+  },
+  "python": "3.12.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "threshold": 0.5,
+  "selection_metric": "validation_novel_structure_accuracy",
+  "test_accessed": false,
+  "published_baseline_fully_reproduced": false,
+  "selected_iterations_from_training_internal_holdout": 259,
+  "final_fit_uses_all_training_rows": true,
+  "final_model_parameters": {
+    "categorical_features": "from_dtype",
+    "class_weight": null,
+    "early_stopping": false,
+    "interaction_cst": null,
+    "l2_regularization": 1.0,
+    "learning_rate": 0.06,
+    "loss": "log_loss",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 259,
+    "max_leaf_nodes": 127,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 30,
+    "random_state": 17,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  }
+}

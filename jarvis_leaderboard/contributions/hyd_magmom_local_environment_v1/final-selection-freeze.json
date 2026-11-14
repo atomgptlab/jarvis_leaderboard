@@ -1,0 +1,15 @@
+{
+  "frozen_at": "2026-10-29T07:48:48.520463+00:00",
+  "run": "hgb-geometry434-full-leaf127-s17",
+  "selection_sha256": "90da81b63dfa2e2d646b60f642cee0c19d6e173fba9e46c67377303c9fd9bbea",
+  "model_sha256": "e4550fb8a856ef2808246c3d9f96df7055f4a8e7e43c51e8ad6b88c4431e8937",
+  "config_sha256": "e2cfaeb43cd310145b7c067e9db313387270e6487bbff93bfc13a5aa275569c4",
+  "validation_accuracy": 0.9538402604864968,
+  "novel_validation_accuracy": 0.9536270925533962,
+  "selection_basis": "Best novel-structure validation accuracy, simpler single model preferred for equal accuracy. Three-seed 562-feature extension scored 0.9524995211645279 on validation for each seed, below the 434-feature model.",
+  "test_predictions_generated_at_freeze": false,
+  "test_labels_used_for_selection": false,
+  "public_test_predictions_used": false,
+  "official_rank_claimed": false,
+  "feature_extension_failure_audit": "structure-extension-failure-audit.json"
+}

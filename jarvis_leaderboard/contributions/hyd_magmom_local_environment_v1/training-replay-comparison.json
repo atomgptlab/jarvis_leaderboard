@@ -1,0 +1,7 @@
+{
+  "validation_rows": 5221,
+  "max_probability_difference": 0.0,
+  "prediction_disagreements": 0,
+  "training_replay_passed": true,
+  "test_accessed": false
+}

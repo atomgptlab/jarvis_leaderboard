@@ -1,0 +1,9 @@
+{
+  "required_metadata_present": true,
+  "run_sh_present": true,
+  "prediction_zip_present": true,
+  "python_sources_parse": true,
+  "full_upstream_rebuild_executed": false,
+  "scoped_official_scorer_executed": true,
+  "docker_recipe_tested": false
+}

@@ -1,0 +1,23 @@
+{
+  "validation_accuracy": 0.9538402604864968,
+  "validation_novel_structure_accuracy": 0.9536270925533962,
+  "validation_novel_structure_count": 5197,
+  "validation_balanced_accuracy": 0.9250139946434448,
+  "validation_f1": 0.8880631676730144,
+  "validation_log_loss": 0.12560058597178028,
+  "confusion_matrix_labels_0_1": [
+    [
+      4024,
+      105
+    ],
+    [
+      136,
+      956
+    ]
+  ],
+  "fit_seconds": 67.69626495800912,
+  "train_count": 41766,
+  "validation_count": 5221,
+  "test_evaluated": false,
+  "iterations": 259
+}
