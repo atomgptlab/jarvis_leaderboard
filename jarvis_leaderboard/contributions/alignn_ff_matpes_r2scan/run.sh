@@ -1,45 +1,26 @@
 #!/bin/bash
-# CHIPS-FF (dft_3d_chipsff) entries for the ALIGNN-FF MATPES-R2SCAN force field.
-# Same protocol as the other CHIPS-FF rows: the chipsff suite is run on the 104
-# canonical leaderboard jids, then the per-material job_info/results JSONs are
-# reduced to one CSV per property.
-#
-# Only the force field changes between the ALIGNN-FF rows; $MODEL selects it.
+#SBATCH -p cpu
+#SBATCH -c 4
+#SBATCH --mem=16G
+#SBATCH --time=4-00:00:00
+#SBATCH -J alignn_ff_matpes_r2scan
+#SBATCH -o alignn_ff_matpes_r2scan.log
+# Recipe for this entry: CHIPS-FF run_main.py with the alignn_ff_matpes_r2scan
+# weights on CPU, then writes the 10 dft_3d_chipsff leaderboard files.
+#   CHIPS_FF  atomgptlab/chipsff checkout on develop (these results: commit 1e31598)
+#   ALIGNN    atomgptlab/alignn source with the element-embedding models
+#   MODEL     unzipped alignn_ff_matpes_r2scan folder (best_model.pt + config.json)
+#             from figshare article 34846446; keep the folder name, run_main.py
+#             names its output folder chipsff_frechet_<folder name>
+#   BENCH     jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction
+# The submitted results used an unversioned alignn snapshot (alignn/ff files
+# dated 2026-10-13) and JARVIS dft_3d 9-24-2025. package_leaderboard.py reads
+# dft_3d and vacancydb from ~/.cache/atomgptlab/jarvis_data unless --dft3d and
+# --vacancydb are given. run_main.py writes about 0.5 GB of outputs here.
+# The -c and --mem requests above are a suggestion; the original job's requests
+# were not recorded with its outputs.
 set -e
-HERE="$(cd "$(dirname "$0")" && pwd)"
-PY=${PY:-/home/kamalch/miniforge3/envs/chipsff/bin/python}   # env with chipsff + alignn.ff
-RC=${RC:-/home/kamalch/alignn2026/chipsff/chipsff/run_chipsff.py}
-MODEL=${MODEL:-/home/kamalch/alignn2026/matpes_r2scan/results}
-D=${D:-/home/kamalch/alignn2026/chipsff_alignn_ff_matpes_r2scan}                 # work dir: lb_jids.json + chemical_potentials.json
-
-run_one(){
-  jid=$1; wd=$D/$jid; mkdir -p "$wd"; cp "$D/chemical_potentials.json" "$wd/"
-  cat > "$wd/input.json" <<JSON
-{"jid":"$jid","calculator_type":"alignn_ff","chemical_potentials_file":"chemical_potentials.json",
- "properties_to_calculate":["relax_structure","calculate_ev_curve","calculate_formation_energy","calculate_elastic_tensor","analyze_surfaces","analyze_defects"],
- "bulk_relaxation_settings":{"filter_type":"ExpCellFilter","relaxation_settings":{"fmax":0.05,"steps":200,"constant_volume":false}},
- "surface_settings":{"indices_list":[[0,1,0],[0,0,1]],"layers":4,"vacuum":18,"relaxation_settings":{"fmax":0.05,"steps":200,"constant_volume":true},"filter_type":"ExpCellFilter"},
- "defect_settings":{"generate_settings":{"on_conventional_cell":true,"enforce_c_size":8,"extend":1},"relaxation_settings":{"fmax":0.05,"steps":200,"constant_volume":true},"filter_type":"ExpCellFilter"},
- "use_conventional_cell":true,
- "calculator_settings":{"alignn_ff":{"path":"$MODEL","model_filename":"best_model.pt","stress_wt":1}}}
-JSON
-  ( cd "$wd" && BROWSER=/bin/true OMP_NUM_THREADS=4 $PY $RC --input_file input.json > run.log 2>&1 )
-}
-export -f run_one; export PY RC D MODEL
-
-python3 -c "import json;print('\n'.join(json.load(open('$D/lb_jids.json'))))" \
-  | xargs -I{} -P4 bash -c 'run_one "$@"' _ {}
-
-# Extract the per-material predictions from the job_info/results JSONs:
-A=../alignn2_radius
-"$PY" "$HERE/$A/chipsff_extract_pred.py" "$D" "$HERE/chipsff_pred_matpes_r2scan.json" full
-
-# NOTE: the final reduction to the CSVs in this directory used a per-model copy
-# of $A/chipsff_leaderboard_matpes.py -- that script is hardcoded to the
-# matpes_smooth run and its copy for this model was not kept, so the step below
-# is the recipe, not a runnable line. Formation and vacancy energies must use
-# chemical potentials computed with THIS model (one single point per elemental
-# reference structure); the chipsff-shipped chempots sit on a different model's
-# energy scale and shift form_en by ~2 eV/atom if reused.
-#   $A/build_matpes_unary.py  (retargeted at $MODEL)  -> matpes_r2scan_unary.json
-#   $A/chipsff_leaderboard_matpes.py (retargeted)     -> AI-SinglePropertyPrediction-*.csv.zip
+: "${CHIPS_FF:?}" "${ALIGNN:?}" "${MODEL:?}" "${BENCH:?}"
+export OMP_NUM_THREADS=4 CUDA_VISIBLE_DEVICES= MPLBACKEND=Agg PYTHONPATH=$CHIPS_FF:$ALIGNN
+python -m chipsff.run_main --alignn_ff --model_path "$MODEL" --device cpu --tasks optimize,elastic,surface,vacancy
+python package_leaderboard.py chipsff_frechet_alignn_ff_matpes_r2scan "$BENCH" .
