@@ -1,0 +1,37 @@
+{
+    "model_name": "ternary-bonsai-2-4b (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "14230"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, OpenAI-compatible server (ternary PQ2_0 GGUF, thinking, llama.cpp)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "ternary-bonsai-2-4b",
+        "hf_id": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+        "hardware": "GB10",
+        "setting": "ternary PQ2_0 GGUF, thinking, llama.cpp",
+        "shared_gpu": false,
+        "concurrency": 8,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.6136,
+        "accuracy_std": 0.0107,
+        "accuracy_sample0": 0.6061,
+        "truncated": 0.0,
+        "tokens_mean": 8819,
+        "tokens_total": 3492432,
+        "time_h": 3.953,
+        "score_per_hour": 15.5,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/ternary-bonsai-2-4b-gb10/gpqa_diamond"
+    }
+}

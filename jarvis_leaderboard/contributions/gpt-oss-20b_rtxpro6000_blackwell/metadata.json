@@ -1,0 +1,37 @@
+{
+    "model_name": "gpt-oss-20b (RTX PRO 6000 Blackwell, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "2194"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.11.0 (medium effort)",
+    "hardware_used": "1x NVIDIA RTX PRO 6000 Blackwell Workstation Edition (96 GB)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "gpt-oss-20b",
+        "hf_id": "openai/gpt-oss-20b",
+        "hardware": "RTX PRO 6000 Blackwell",
+        "setting": "medium effort",
+        "shared_gpu": true,
+        "concurrency": 8,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.6465,
+        "accuracy_std": 0.0429,
+        "accuracy_sample0": 0.6768,
+        "truncated": 0.0025,
+        "tokens_mean": 3375,
+        "tokens_total": 1336340,
+        "time_h": 0.609,
+        "score_per_hour": 106.1,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/gpt-oss-20b/gpqa_diamond"
+    }
+}

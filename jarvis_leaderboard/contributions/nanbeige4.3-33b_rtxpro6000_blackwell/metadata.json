@@ -1,0 +1,37 @@
+{
+    "model_name": "nanbeige4.3-33b (RTX PRO 6000 Blackwell, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "25668"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.31.0 (FP8, thinking)",
+    "hardware_used": "1x NVIDIA RTX PRO 6000 Blackwell Workstation Edition (96 GB)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "nanbeige4.3-33b",
+        "hf_id": "Nanbeige/Nanbeige4.3-33B-FP8",
+        "hardware": "RTX PRO 6000 Blackwell",
+        "setting": "FP8, thinking",
+        "shared_gpu": false,
+        "concurrency": 16,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.7879,
+        "accuracy_std": 0.0286,
+        "accuracy_sample0": 0.7677,
+        "truncated": 0.1414,
+        "tokens_mean": 10879,
+        "tokens_total": 4308092,
+        "time_h": 7.13,
+        "score_per_hour": 11.1,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/nanbeige4.3-33b/gpqa_diamond"
+    }
+}

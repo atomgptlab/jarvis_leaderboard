@@ -1,0 +1,37 @@
+{
+    "model_name": "qwen3.8-flash-next (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "12251"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, OpenAI-compatible server (NVFP4 (QAD), low effort, TensorFold)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "qwen3.8-flash-next",
+        "hf_id": "nvidia/Qwen3.8-Flash-Next-FP4-Local",
+        "hardware": "GB10",
+        "setting": "NVFP4 (QAD), low effort, TensorFold",
+        "shared_gpu": false,
+        "concurrency": 5,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.8561,
+        "accuracy_std": 0.0107,
+        "accuracy_sample0": 0.8636,
+        "truncated": 0.0278,
+        "tokens_mean": 4256,
+        "tokens_total": 1685258,
+        "time_h": 3.403,
+        "score_per_hour": 25.2,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/qwen3.8-flash-next-gb10/gpqa_diamond"
+    }
+}

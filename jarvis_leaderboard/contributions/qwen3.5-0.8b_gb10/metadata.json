@@ -1,0 +1,37 @@
+{
+    "model_name": "qwen3.5-0.8b (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "5652"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.31.0 (BF16, thinking)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "qwen3.5-0.8b",
+        "hf_id": "Qwen/Qwen3.5-0.8B",
+        "hardware": "GB10",
+        "setting": "BF16, thinking",
+        "shared_gpu": false,
+        "concurrency": 32,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.298,
+        "accuracy_std": 0.0143,
+        "accuracy_sample0": 0.2879,
+        "truncated": 0.0278,
+        "tokens_mean": 14867,
+        "tokens_total": 5887278,
+        "time_h": 1.57,
+        "score_per_hour": 19.0,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/qwen3.5-0.8b-gb10/gpqa_diamond"
+    }
+}
