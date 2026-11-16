@@ -1,0 +1,16 @@
+{
+    "model_name": "QV-JLB-Site-Plain-v1",
+    "project_url": "https://quantavane.com",
+    "date_submitted": "11-16-2026",
+    "author_email": "arhan@quantavane.com",
+    "database_version": "jarvis-tools dataset AGRA_CHO",
+    "team_name": "Quantavane",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-ead-AGRA_CHO-test-mae.csv.zip": 8.5
+    },
+    "language": "python",
+    "os": "macos",
+    "software_used": "numpy,scikit-learn,matminer,pymatgen,jarvis-tools",
+    "hardware_used": "Apple M5 Pro CPU, 4 threads",
+    "git_url": []
+}
