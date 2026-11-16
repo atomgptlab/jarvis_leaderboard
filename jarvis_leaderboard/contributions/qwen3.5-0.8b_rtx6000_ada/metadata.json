@@ -1,0 +1,37 @@
+{
+    "model_name": "qwen3.5-0.8b (RTX 6000 Ada, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "4788"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.31.0 (BF16, thinking)",
+    "hardware_used": "1x NVIDIA RTX 6000 Ada Generation (48 GB)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "qwen3.5-0.8b",
+        "hf_id": "Qwen/Qwen3.5-0.8B",
+        "hardware": "RTX 6000 Ada",
+        "setting": "BF16, thinking",
+        "shared_gpu": false,
+        "concurrency": 32,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.3232,
+        "accuracy_std": 0.0,
+        "accuracy_sample0": 0.3232,
+        "truncated": 0.0328,
+        "tokens_mean": 15024,
+        "tokens_total": 5949631,
+        "time_h": 1.33,
+        "score_per_hour": 24.3,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/qwen3.5-0.8b/gpqa_diamond"
+    }
+}

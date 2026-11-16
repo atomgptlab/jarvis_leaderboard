@@ -1,0 +1,37 @@
+{
+    "model_name": "qwen3.8-27b (RTX PRO 6000 Blackwell, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "7677"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.31.0 (FP8, low effort)",
+    "hardware_used": "1x NVIDIA RTX PRO 6000 Blackwell Workstation Edition (96 GB)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "qwen3.8-27b",
+        "hf_id": "Qwen/Qwen3.8-27B-FP8",
+        "hardware": "RTX PRO 6000 Blackwell",
+        "setting": "FP8, low effort",
+        "shared_gpu": true,
+        "concurrency": 10,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.8409,
+        "accuracy_std": 0.0179,
+        "accuracy_sample0": 0.8535,
+        "truncated": 0.0202,
+        "tokens_mean": 5180,
+        "tokens_total": 2051296,
+        "time_h": 2.133,
+        "score_per_hour": 39.4,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/qwen3.8-27b/gpqa_diamond"
+    }
+}

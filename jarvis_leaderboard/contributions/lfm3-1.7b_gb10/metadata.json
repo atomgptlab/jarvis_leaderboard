@@ -1,0 +1,37 @@
+{
+    "model_name": "lfm3-1.7b (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "2607"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.32.0 (BF16, reasoning)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "lfm3-1.7b",
+        "hf_id": "LiquidAI/LFM3-1.7B",
+        "hardware": "GB10",
+        "setting": "BF16, reasoning",
+        "shared_gpu": false,
+        "concurrency": 32,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.5909,
+        "accuracy_std": 0.0071,
+        "accuracy_sample0": 0.596,
+        "truncated": 0.0,
+        "tokens_mean": 6771,
+        "tokens_total": 2681429,
+        "time_h": 0.724,
+        "score_per_hour": 81.6,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/lfm3-1.7b-gb10/gpqa_diamond"
+    }
+}

@@ -179,6 +179,107 @@ def save_md(fig=None, md_path=None, detailed_links=None):
     #    file.write("\n".join(content))
 
 
+def scorehour_page(md_path="ScoreHour.md"):
+    """ScoreHour: GPQA Diamond accuracy and accuracy per hour of serving
+    for open-weight reasoning models on desk-side GPUs. Reads the
+    "scorehour" block of each contribution's metadata.json."""
+    import json
+
+    import plotly.graph_objects as go
+
+    rows = []
+    for meta in sorted(
+        glob.glob(
+            os.path.join(root_dir, "contributions", "*", "metadata.json")
+        )
+    ):
+        with open(meta) as f:
+            sh = json.load(f).get("scorehour")
+        if sh:
+            sh["contribution"] = meta.split(os.sep)[-2]
+            rows.append(sh)
+    rows.sort(
+        key=lambda r: (
+            r["score_per_hour"] is None,
+            -(r["score_per_hour"] or 0),
+            -r["accuracy_mean"],
+        )
+    )
+    colors = {}
+    palette = ["#2a6fdb", "#e0672b", "#2e9d5b", "#8a55c9"]
+    fig = go.Figure()
+    for r in rows:
+        hw = r["hardware"].split(" (")[0]
+        colors.setdefault(hw, palette[len(colors) % len(palette)])
+    for hw, col in colors.items():
+        sel = [r for r in rows if r["hardware"].split(" (")[0] == hw]
+        fig.add_trace(
+            go.Scatter(
+                x=[r["time_h"] for r in sel],
+                y=[100 * r["accuracy_mean"] for r in sel],
+                mode="markers",
+                name=hw,
+                marker=dict(size=10, color=col, opacity=0.85),
+                text=[
+                    f"{r['model']}<br>{r['hardware']}<br>"
+                    f"{100 * r['accuracy_mean']:.1f}% in {r['time_h']:.2f} h"
+                    + (
+                        f"<br>Score/h {r['score_per_hour']:.0f}"
+                        if r["score_per_hour"]
+                        else ""
+                    )
+                    for r in sel
+                ],
+                hoverinfo="text",
+            )
+        )
+    fig.add_hline(
+        y=25, line_dash="dot", line_color="gray", annotation_text="chance"
+    )
+    fig.update_layout(
+        width=900,
+        height=550,
+        xaxis=dict(title="Run time (h, log scale)", type="log"),
+        yaxis=dict(title="GPQA Diamond accuracy (%)", range=[0, 100]),
+        legend=dict(title="Hardware"),
+        template="plotly_white",
+    )
+    base = (
+        "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/"
+        "jarvis_leaderboard/contributions/"
+    )
+    table = (
+        '<table style="width:100%" id="j_table"><thead><tr>'
+        "<th>Rank</th><th>Model</th><th>Hardware</th><th>Setting</th>"
+        "<th>c</th><th>Accuracy (%)</th><th>Tokens/resp.</th>"
+        "<th>Truncated (%)</th><th>Time (h)</th><th>Score/h</th>"
+        "<th>Entry</th></tr></thead><tbody>"
+    )
+    for i, r in enumerate(rows, 1):
+        hw = r["hardware"] + (" &dagger;" if r.get("shared_gpu") else "")
+        model = (
+            f'<a href="https://huggingface.co/{r["hf_id"]}" '
+            f'target="_blank">{r["model"]}</a>'
+            if r.get("hf_id")
+            else r["model"]
+        )
+        sph = r["score_per_hour"]
+        table += (
+            f"<tr><td>{i}</td><td>{model}</td><td>{hw}</td>"
+            f"<td>{r['setting']}</td><td>{r['concurrency']}</td>"
+            f"<td>{100 * r['accuracy_mean']:.1f} &plusmn; "
+            f"{100 * r['accuracy_std']:.1f}</td>"
+            f"<td>{r['tokens_mean'] / 1000:.1f}k</td>"
+            f"<td>{100 * r['truncated']:.1f}</td>"
+            f"<td>{r['time_h']:.2f}</td>"
+            f"<td>{'--' if sph is None else f'{sph:.0f}'}</td>"
+            f'<td><a href="{base}{r["contribution"]}" target="_blank">'
+            "files</a></td></tr>"
+        )
+    table += "</tbody></table>"
+    save_md(fig=fig, md_path=md_path, detailed_links=table)
+
+
 if __name__ == "__main__":
     g2p_benchmarks = [
         "AI-SinglePropertyClass-acidophilic-bacdive-test-acc.csv.zip",
@@ -356,3 +457,4 @@ if __name__ == "__main__":
         width=1200,
         height=500,
     )
+    scorehour_page()

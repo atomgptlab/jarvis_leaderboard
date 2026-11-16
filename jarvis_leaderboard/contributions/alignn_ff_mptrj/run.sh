@@ -1,16 +1,26 @@
 #!/bin/bash
-# CHIPS-FF (dft_3d_chipsff) entries for the ALIGNN-FF MPtrj (epoch 46) force
-# field. Same protocol and commands as ../alignn_ff_matpes_r2scan/run.sh, with
-#   MODEL = the MPtrj ALIGNN-FF checkpoint (best_model.pt, epoch 46)
-#   filter_type = FrechetCellFilter instead of ExpCellFilter (chipsff needed a
-#     small patch to accept it; upstream only implemented ExpCellFilter)
-#   chemical potentials from this model: mptrj_ep46_chempots.json (this dir)
-# form_en is not submitted yet: 103/104 jids (no Sr reference with this model).
+#SBATCH -p cpu
+#SBATCH -c 4
+#SBATCH --mem=16G
+#SBATCH --time=4-00:00:00
+#SBATCH -J alignn_ff_mptrj
+#SBATCH -o alignn_ff_mptrj.log
+# Recipe for this entry: CHIPS-FF run_main.py with the alignn_ff_mptrj weights
+# on CPU, then writes the 10 dft_3d_chipsff leaderboard files.
+#   CHIPS_FF  atomgptlab/chipsff checkout on develop (these results: commit 1e31598)
+#   ALIGNN    atomgptlab/alignn source with the element-embedding models
+#   MODEL     unzipped alignn_ff_mptrj folder (best_model.pt + config.json) from
+#             figshare article 34846446; keep the folder name, run_main.py names
+#             its output folder chipsff_frechet_<folder name>
+#   BENCH     jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction
+# The submitted results used an unversioned alignn snapshot (alignn/ff files
+# dated 2026-10-13) and JARVIS dft_3d 9-24-2025. package_leaderboard.py reads
+# dft_3d and vacancydb from ~/.cache/atomgptlab/jarvis_data unless --dft3d and
+# --vacancydb are given. run_main.py writes about 0.5 GB of outputs here.
+# The -c and --mem requests above are a suggestion; the original job's requests
+# were not recorded with its outputs.
 set -e
-HERE="$(cd "$(dirname "$0")" && pwd)"
-export MODEL=${MODEL:-/home/kamalch/alignn2026/mptrj_frontier/Out_MP20}
-export D=${D:-/home/kamalch/alignn2026/chipsff_frechet_mptrj}
-cp "$HERE/mptrj_ep46_chempots.json" "$D/chemical_potentials.json"
-sed 's/ExpCellFilter/FrechetCellFilter/g' \
-  "$HERE/../alignn_ff_matpes_r2scan/run.sh" > "$D/run_chipsff.sh"
-bash "$D/run_chipsff.sh"
+: "${CHIPS_FF:?}" "${ALIGNN:?}" "${MODEL:?}" "${BENCH:?}"
+export OMP_NUM_THREADS=4 CUDA_VISIBLE_DEVICES= MPLBACKEND=Agg PYTHONPATH=$CHIPS_FF:$ALIGNN
+python -m chipsff.run_main --alignn_ff --model_path "$MODEL" --device cpu --tasks optimize,elastic,surface,vacancy
+python package_leaderboard.py chipsff_frechet_alignn_ff_mptrj "$BENCH" .

@@ -1,0 +1,37 @@
+{
+    "model_name": "granite-4.0-h-1b (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "119"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.32.0 (BF16, no reasoning)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "granite-4.0-h-1b",
+        "hf_id": "ibm-granite/granite-4.0-h-1b",
+        "hardware": "GB10",
+        "setting": "BF16, no reasoning",
+        "shared_gpu": false,
+        "concurrency": 32,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.1869,
+        "accuracy_std": 0.0071,
+        "accuracy_sample0": 0.1818,
+        "truncated": 0.0,
+        "tokens_mean": 336,
+        "tokens_total": 133081,
+        "time_h": 0.033,
+        "score_per_hour": null,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/granite-4.0-h-1b-gb10/gpqa_diamond"
+    }
+}

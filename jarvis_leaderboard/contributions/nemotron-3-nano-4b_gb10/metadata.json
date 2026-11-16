@@ -1,0 +1,37 @@
+{
+    "model_name": "nemotron-3-nano-4b (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "10517"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.32.0 (BF16, reasoning on)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "nemotron-3-nano-4b",
+        "hf_id": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+        "hardware": "GB10",
+        "setting": "BF16, reasoning on",
+        "shared_gpu": false,
+        "concurrency": 32,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.5076,
+        "accuracy_std": 0.0321,
+        "accuracy_sample0": 0.4848,
+        "truncated": 0.0657,
+        "tokens_mean": 9839,
+        "tokens_total": 3896309,
+        "time_h": 2.921,
+        "score_per_hour": 17.4,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/nemotron-3-nano-4b-gb10/gpqa_diamond"
+    }
+}

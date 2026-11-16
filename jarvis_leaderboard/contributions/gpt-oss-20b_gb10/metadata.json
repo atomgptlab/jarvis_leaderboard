@@ -1,0 +1,37 @@
+{
+    "model_name": "gpt-oss-20b (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "7935"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM 0.31.0 (medium effort, GB10)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "gpt-oss-20b",
+        "hf_id": "openai/gpt-oss-20b",
+        "hardware": "GB10",
+        "setting": "medium effort, GB10",
+        "shared_gpu": false,
+        "concurrency": 8,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.6439,
+        "accuracy_std": 0.0179,
+        "accuracy_sample0": 0.6313,
+        "truncated": 0.0,
+        "tokens_mean": 3848,
+        "tokens_total": 1523888,
+        "time_h": 2.204,
+        "score_per_hour": 29.2,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/gpt-oss-20b-gb10/gpqa_diamond"
+    }
+}

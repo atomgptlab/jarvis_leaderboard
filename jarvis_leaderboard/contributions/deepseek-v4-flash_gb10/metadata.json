@@ -1,0 +1,37 @@
+{
+    "model_name": "deepseek-v4-flash (GB10, ScoreHour)",
+    "project_url": "https://github.com/atomgptlab/reprollm",
+    "date_submitted": "11-16-2026",
+    "author_email": "kchoudh2@jhu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "AtomGPT",
+    "time_taken_seconds": {
+        "AI-TextClass-test_quiz-gpqa_diamond-test-acc.csv.zip": "46828"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "reprollm, vLLM dev (REAP-pruned EXL3, thinking, SparkInfer)",
+    "hardware_used": "1x NVIDIA GB10 Grace Blackwell superchip (128 GB unified memory, DGX Spark class)",
+    "git_url": [
+        "https://github.com/atomgptlab/reprollm"
+    ],
+    "scorehour": {
+        "model": "deepseek-v4-flash",
+        "hf_id": "0xSero/deepseek-v4-flash-0731-spark",
+        "hardware": "GB10",
+        "setting": "REAP-pruned EXL3, thinking, SparkInfer",
+        "shared_gpu": false,
+        "concurrency": 4,
+        "max_tokens": 32768,
+        "samples_per_question": 2,
+        "accuracy_mean": 0.8763,
+        "accuracy_std": 0.0107,
+        "accuracy_sample0": 0.8687,
+        "truncated": 0.0455,
+        "tokens_mean": 5751,
+        "tokens_total": 2277571,
+        "time_h": 13.008,
+        "score_per_hour": 6.7,
+        "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/deepseek-v4-flash-gb10/gpqa_diamond"
+    }
+}
