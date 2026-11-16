@@ -2031,6 +2031,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/atomgptlab/jarvis_leaderboard/Special/ScoreHour/</loc>
+         <lastmod>2026-11-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/atomgptlab/jarvis_leaderboard/Special/catalysis_mat/</loc>
          <lastmod>2026-11-16</lastmod>
          <changefreq>daily</changefreq>
