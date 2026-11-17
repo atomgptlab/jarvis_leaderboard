@@ -31,7 +31,7 @@
         "tokens_mean": 3229,
         "tokens_total": 1278741,
         "time_h": 0.095,
-        "score_per_hour": 473.5,
+        "score_per_hour": 473.464,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/gemma-4-e2b/gpqa_diamond"
     }
 }

@@ -31,7 +31,7 @@
         "tokens_mean": 8197,
         "tokens_total": 3246026,
         "time_h": 9.278,
-        "score_per_hour": 5.3,
+        "score_per_hour": 5.334,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/phi-4-mini-reasoning-gb10/gpqa_diamond"
     }
 }

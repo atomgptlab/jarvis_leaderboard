@@ -31,7 +31,7 @@
         "tokens_mean": 1955,
         "tokens_total": 774213,
         "time_h": 1.447,
-        "score_per_hour": 48.2,
+        "score_per_hour": 48.177,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/gpt-oss-120b-gb10/gpqa_diamond"
     }
 }

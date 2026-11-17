@@ -31,7 +31,7 @@
         "tokens_mean": 11760,
         "tokens_total": 4656833,
         "time_h": 5.027,
-        "score_per_hour": 13.7,
+        "score_per_hour": 13.663,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/phi-4-reasoning-plus/gpqa_diamond"
     }
 }

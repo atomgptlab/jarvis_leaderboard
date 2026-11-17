@@ -31,7 +31,7 @@
         "tokens_mean": 12824,
         "tokens_total": 5078335,
         "time_h": 15.978,
-        "score_per_hour": 5.0,
+        "score_per_hour": 4.979,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/nemotron-3.5-super-120b-gb10/gpqa_diamond"
     }
 }

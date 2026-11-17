@@ -31,7 +31,7 @@
         "tokens_mean": 9741,
         "tokens_total": 3857427,
         "time_h": 8.684,
-        "score_per_hour": 9.1,
+        "score_per_hour": 9.102,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/k2-horizon-mova-36b-a4b/gpqa_diamond"
     }
 }

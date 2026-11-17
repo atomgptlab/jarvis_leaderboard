@@ -31,7 +31,7 @@
         "tokens_mean": 10879,
         "tokens_total": 4308092,
         "time_h": 7.13,
-        "score_per_hour": 11.1,
+        "score_per_hour": 11.05,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/nanbeige4.3-33b/gpqa_diamond"
     }
 }

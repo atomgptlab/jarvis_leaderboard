@@ -31,7 +31,7 @@
         "tokens_mean": 6179,
         "tokens_total": 2446872,
         "time_h": 2.297,
-        "score_per_hour": 36.3,
+        "score_per_hour": 36.283,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/muse-glimmer-30b/gpqa_diamond"
     }
 }

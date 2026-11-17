@@ -31,7 +31,7 @@
         "tokens_mean": 5398,
         "tokens_total": 2137550,
         "time_h": 0.798,
-        "score_per_hour": 100.3,
+        "score_per_hour": 100.312,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/minicpm-v-4.7-35b-a3b/gpqa_diamond"
     }
 }

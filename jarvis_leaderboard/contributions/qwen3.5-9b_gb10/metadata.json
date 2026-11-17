@@ -31,7 +31,7 @@
         "tokens_mean": 10570,
         "tokens_total": 4185765,
         "time_h": 4.571,
-        "score_per_hour": 17.8,
+        "score_per_hour": 17.845,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/qwen3.5-9b-gb10/gpqa_diamond"
     }
 }

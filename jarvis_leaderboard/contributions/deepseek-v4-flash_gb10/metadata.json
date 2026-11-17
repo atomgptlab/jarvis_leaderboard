@@ -31,7 +31,7 @@
         "tokens_mean": 5751,
         "tokens_total": 2277571,
         "time_h": 13.008,
-        "score_per_hour": 6.7,
+        "score_per_hour": 6.736,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/deepseek-v4-flash-gb10/gpqa_diamond"
     }
 }

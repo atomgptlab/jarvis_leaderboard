@@ -31,7 +31,7 @@
         "tokens_mean": 9839,
         "tokens_total": 3896309,
         "time_h": 2.921,
-        "score_per_hour": 17.4,
+        "score_per_hour": 17.375,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/nemotron-3-nano-4b-gb10/gpqa_diamond"
     }
 }

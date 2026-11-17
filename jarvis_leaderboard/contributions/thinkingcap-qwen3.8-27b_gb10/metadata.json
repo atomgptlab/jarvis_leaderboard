@@ -31,7 +31,7 @@
         "tokens_mean": 4230,
         "tokens_total": 1674915,
         "time_h": 3.075,
-        "score_per_hour": 27.7,
+        "score_per_hour": 27.675,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/thinkingcap-qwen3.8-27b-gb10/gpqa_diamond"
     }
 }

@@ -184,6 +184,7 @@ def scorehour_page(md_path="ScoreHour.md"):
     for open-weight reasoning models on desk-side GPUs. Reads the
     "scorehour" block of each contribution's metadata.json."""
     import json
+    import math
 
     import plotly.graph_objects as go
 
@@ -217,9 +218,13 @@ def scorehour_page(md_path="ScoreHour.md"):
             go.Scatter(
                 x=[r["time_h"] for r in sel],
                 y=[100 * r["accuracy_mean"] for r in sel],
-                mode="markers",
+                mode="markers+text",
                 name=hw,
                 marker=dict(size=10, color=col, opacity=0.85),
+                textposition="top center",
+                textfont=dict(size=9, color=col),
+                texttemplate="%{customdata}",
+                customdata=[r["model"] for r in sel],
                 text=[
                     f"{r['model']}<br>{r['hardware']}<br>"
                     f"{100 * r['accuracy_mean']:.1f}% in {r['time_h']:.2f} h"
@@ -244,16 +249,70 @@ def scorehour_page(md_path="ScoreHour.md"):
         legend=dict(title="Hardware"),
         template="plotly_white",
     )
+    # Score/h ranking, one named bar per model x hardware
+    ranked = [r for r in rows if r["score_per_hour"]][::-1]
+    bar = go.Figure(
+        go.Bar(
+            x=[r["score_per_hour"] for r in ranked],
+            y=[f"{r['model']} | {r['hardware']}" for r in ranked],
+            orientation="h",
+            marker_color=[
+                colors[r["hardware"].split(" (")[0]] for r in ranked
+            ],
+            text=[
+                f"{r['score_per_hour']:.0f}  ({100 * r['accuracy_mean']:.1f}%"
+                f", {r['time_h']:.2f} h)"
+                for r in ranked
+            ],
+            textposition="outside",
+            hovertemplate="%{y}<br>Score/h %{x:.0f}<extra></extra>",
+        )
+    )
+    bar.update_layout(
+        width=900,
+        height=120 + 20 * len(ranked),
+        xaxis=dict(
+            title="Score/h (accuracy % per hour), log scale",
+            type="log",
+            range=[
+                math.log10(min(r["score_per_hour"] for r in ranked) * 0.8),
+                math.log10(max(r["score_per_hour"] for r in ranked) * 5),
+            ],
+        ),
+        title=dict(
+            text="blue: RTX PRO 6000 Blackwell | orange: GB10 | "
+            "green: RTX 6000 Ada",
+            font=dict(size=12),
+            x=0,
+        ),
+        yaxis=dict(automargin=True, tickfont=dict(size=11)),
+        margin=dict(l=10, r=40, t=50, b=40),
+        template="plotly_white",
+    )
+
+    class _Figs:
+        def to_html(self, **kw):
+            return bar.to_html(**kw) + fig.to_html(
+                full_html=False, include_plotlyjs=False
+            )
+
     base = (
         "https://github.com/atomgptlab/jarvis_leaderboard/tree/main/"
         "jarvis_leaderboard/contributions/"
     )
+    bench = (
+        "https://atomgptlab.github.io/jarvis_leaderboard/AI/TextClass/"
+        "gpqa_diamond_test_quiz"
+    )
     table = (
+        f'<p>Benchmark page: <a href="{bench}" target="_blank">'
+        "AI / TextClass / gpqa_diamond_test_quiz</a> (sample-0 accuracy "
+        "of every entry)</p>"
         '<table style="width:100%" id="j_table"><thead><tr>'
         "<th>Rank</th><th>Model</th><th>Hardware</th><th>Setting</th>"
         "<th>c</th><th>Accuracy (%)</th><th>Tokens/resp.</th>"
         "<th>Truncated (%)</th><th>Time (h)</th><th>Score/h</th>"
-        "<th>Entry</th></tr></thead><tbody>"
+        "<th>Contribution</th></tr></thead><tbody>"
     )
     for i, r in enumerate(rows, 1):
         hw = r["hardware"] + (" &dagger;" if r.get("shared_gpu") else "")
@@ -274,10 +333,10 @@ def scorehour_page(md_path="ScoreHour.md"):
             f"<td>{r['time_h']:.2f}</td>"
             f"<td>{'--' if sph is None else f'{sph:.0f}'}</td>"
             f'<td><a href="{base}{r["contribution"]}" target="_blank">'
-            "files</a></td></tr>"
+            f'{r["contribution"]}</a></td></tr>'
         )
     table += "</tbody></table>"
-    save_md(fig=fig, md_path=md_path, detailed_links=table)
+    save_md(fig=_Figs(), md_path=md_path, detailed_links=table)
 
 
 if __name__ == "__main__":

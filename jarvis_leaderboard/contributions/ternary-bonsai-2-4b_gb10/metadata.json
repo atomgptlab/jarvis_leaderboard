@@ -31,7 +31,7 @@
         "tokens_mean": 8819,
         "tokens_total": 3492432,
         "time_h": 3.953,
-        "score_per_hour": 15.5,
+        "score_per_hour": 15.524,
         "reprollm_results": "https://github.com/atomgptlab/reprollm/tree/main/results/ternary-bonsai-2-4b-gb10/gpqa_diamond"
     }
 }
