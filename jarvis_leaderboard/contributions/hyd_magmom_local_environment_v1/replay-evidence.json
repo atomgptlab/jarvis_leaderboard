@@ -1,0 +1,10 @@
+{
+  "rows": 5222,
+  "inference_seconds": 6.193992916960269,
+  "raw_sha256": "72da38713e509195220771b83b07cbd2d21f5d0d5cc203e1067dd597465b0b35",
+  "ids_sha256": "ebf022a452f77ec25cc86f2e865ef3442df502af337528496dc2136b3ef84f60",
+  "selection_sha256": "90da81b63dfa2e2d646b60f642cee0c19d6e173fba9e46c67377303c9fd9bbea",
+  "csv_sha256": "26ffda327e5df77ace85fe58a84c058bc7f5149be307c77d717ebd4749435a7e",
+  "zip_sha256": "a304d1eb8d262e4b47497ec1c8b0d0dc48fdecc69e694f0a9561b63e68a25e1a",
+  "benchmark_labels_read": false
+}

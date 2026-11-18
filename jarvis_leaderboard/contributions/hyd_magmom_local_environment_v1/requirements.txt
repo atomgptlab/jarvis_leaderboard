@@ -1,0 +1,7 @@
+numpy==2.5.4
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+matminer==0.10.1
+pymatgen==2026.10.24
+pandas==2.3.3

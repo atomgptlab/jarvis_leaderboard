@@ -1,0 +1,21 @@
+{
+  "author_email": "949801198@qq.com",
+  "team_name": "HYD",
+  "candidate_only": false,
+  "test_predictions_generated": true,
+  "test_labels_used_for_selection": false,
+  "github_connection_confirmed": true,
+  "source_branch": "develop",
+  "source_commit": "c2162d37c02da265e10b6e59915d238db5aa9d3c",
+  "model_choice_may_change_after_remaining_validation_experiments": false,
+  "github_login": "donkeey11",
+  "github_repository": "donkeey11/jarvis_leaderboard",
+  "github_fork_created": true,
+  "training_replay_verified_all_validation_rows": 5221,
+  "docker_recipe_tested": false,
+  "final_selection_frozen": true,
+  "final_freeze_sha256": "094518c528b671e1912b6b6ffe3ed5c922e2749af36db2535e53fad1f6cd040b",
+  "status": "frozen_ready_for_pull_request",
+  "official_test_postfreeze_accuracy": 0.9527001148985064,
+  "official_public_rank_confirmed": false
+}
